@@ -29,7 +29,7 @@ func BenchmarkHumanizeMoneyGenerated(b *testing.B) {
 	for _, c := range cases {
 		b.Run(c.locale.String(), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
-				_, err := humanizemoney.FormatAmount(c.locale, c.value, c.currency, c.opts)
+				_, err := humanizemoney.Formatter(c.locale, c.value, c.currency, c.opts)
 				if err != nil {
 					b.Fatalf("failed to format amount: %v", err)
 				}

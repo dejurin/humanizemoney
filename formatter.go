@@ -30,7 +30,16 @@ func (e UnsupportedLocaleError) Error() string {
 	return fmt.Sprintf("unsupported locale: %v", e.Locale)
 }
 
-func FormatAmount(locale language.Tag, value string, currencyCode string, opts FormatOptions) (string, error) {
+type NumberPattern struct {
+	Prefix          string
+	Suffix          string
+	DecimalSep      string
+	GroupSep        string
+	GroupSizes      []int
+	CurrencyAtStart bool
+}
+
+func Formatter(locale language.Tag, value string, currencyCode string, opts FormatOptions) (string, error) {
 	amount, err := money.ParseAmount(currencyCode, value)
 	if err != nil {
 		return "", FailedParseAmount{Value: value, Err: err}
@@ -47,7 +56,18 @@ func FormatAmount(locale language.Tag, value string, currencyCode string, opts F
 		return "", UnsupportedLocaleError{Locale: locale}
 	}
 
-	prefix, numericCore, suffix := splitPatternByNumeric(schema.Standard)
+	pattern := parseNumberPattern(schema.Standard, schema.Decimals, schema.Group)
+
+	numberStr := amount.Decimal().String()
+	formattedNumber := formatNumberWithPattern(numberStr, pattern)
+
+	result := assembleResultWithSymbol(formattedNumber, pattern, opts.Symbol)
+	return result, nil
+}
+
+func parseNumberPattern(pattern, decimalSep, groupSep string) NumberPattern {
+	prefix, numericCore, suffix := splitPatternByNumeric(pattern)
+	groupSizes := computeGroupSizes(numericCore)
 
 	currencyAtStart := false
 	if strings.Contains(prefix, "¤") {
@@ -57,17 +77,60 @@ func FormatAmount(locale language.Tag, value string, currencyCode string, opts F
 		suffix = strings.ReplaceAll(suffix, "¤", "")
 	}
 
-	groupSizes := computeGroupSizes(numericCore)
+	return NumberPattern{
+		Prefix:          prefix,
+		Suffix:          suffix,
+		DecimalSep:      decimalSep,
+		GroupSep:        groupSep,
+		GroupSizes:      groupSizes,
+		CurrencyAtStart: currencyAtStart,
+	}
+}
 
-	formattedNumber := formatNumber(
-		amount.Decimal().String(),
-		schema.Decimals,
-		schema.Group,
-		groupSizes,
-	)
+func formatNumberWithPattern(numStr string, np NumberPattern) string {
+	parts := strings.Split(numStr, ".")
+	intPart := parts[0]
+	var fracPart string
+	if len(parts) > 1 {
+		fracPart = parts[1]
+	}
 
-	result := assembleResult(prefix, formattedNumber, suffix, opts.Symbol, currencyAtStart)
-	return result, nil
+	intPart = applyGrouping(intPart, np.GroupSep, np.GroupSizes)
+
+	if fracPart != "" {
+		return intPart + np.DecimalSep + fracPart
+	}
+	return intPart
+}
+
+func assembleResultWithSymbol(number string, np NumberPattern, symbol string) string {
+	if np.CurrencyAtStart {
+		return symbol + np.Prefix + number + np.Suffix
+	}
+	return np.Prefix + number + np.Suffix + symbol
+}
+
+func applyGrouping(intPart, groupSep string, groupSizes []int) string {
+	pos := len(intPart)
+	var segments []string
+	groupIndex := 0
+
+	for pos > 0 {
+		size := groupSizesAt(groupSizes, groupIndex)
+		start := pos - size
+		if start < 0 {
+			start = 0
+		}
+		segments = append(segments, intPart[start:pos])
+		pos = start
+		groupIndex++
+	}
+
+	for i, j := 0, len(segments)-1; i < j; i, j = i+1, j-1 {
+		segments[i], segments[j] = segments[j], segments[i]
+	}
+
+	return strings.Join(segments, groupSep)
 }
 
 func splitPatternByNumeric(pattern string) (prefix, numericCore, suffix string) {
@@ -135,50 +198,9 @@ func computeGroupSizes(numericCore string) []int {
 	return groupSizes
 }
 
-func formatNumber(numStr, decimalSep, groupSep string, groupSizes []int) string {
-	parts := strings.Split(numStr, ".")
-	intPart := parts[0]
-	var fracPart string
-	if len(parts) > 1 {
-		fracPart = parts[1]
-	}
-
-	pos := len(intPart)
-	var segments []string
-	groupIndex := 0
-
-	for pos > 0 {
-		size := groupSizesAt(groupSizes, groupIndex)
-		start := pos - size
-		if start < 0 {
-			start = 0
-		}
-		segments = append(segments, intPart[start:pos])
-		pos = start
-		groupIndex++
-	}
-
-	for i, j := 0, len(segments)-1; i < j; i, j = i+1, j-1 {
-		segments[i], segments[j] = segments[j], segments[i]
-	}
-	groupedInt := strings.Join(segments, groupSep)
-
-	if fracPart != "" {
-		groupedInt += decimalSep + fracPart
-	}
-	return groupedInt
-}
-
 func groupSizesAt(gs []int, i int) int {
 	if i < len(gs) {
 		return gs[i]
 	}
 	return gs[len(gs)-1]
-}
-
-func assembleResult(prefix, number, suffix, symbol string, currencyAtStart bool) string {
-	if currencyAtStart {
-		return symbol + prefix + number + suffix
-	}
-	return prefix + number + suffix + symbol
 }

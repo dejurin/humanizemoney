@@ -7,7 +7,7 @@ import (
 	"golang.org/x/text/language"
 )
 
-func TestFormatAmount_Ultimate(t *testing.T) {
+func TestFormatter_Ultimate(t *testing.T) {
 	numbers := []string{
 		"1000",
 		"10000",
@@ -262,9 +262,9 @@ func TestFormatAmount_Ultimate(t *testing.T) {
 	for tag := range NumberSystemLatn {
 		t.Run(fmt.Sprintf("Locale=%s", tag.String()), func(t *testing.T) {
 			for _, num := range numbers {
-				got, err := FormatAmount(tag, num, "USD", opts)
+				got, err := Formatter(tag, num, "USD", opts)
 				if err != nil {
-					t.Errorf("FormatAmount(%q, %s) error: %v", tag, num, err)
+					t.Errorf("Formatter(%q, %s) error: %v", tag, num, err)
 					continue
 				}
 

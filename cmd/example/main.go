@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// Format amount for US locale
-	result, err := humanizemoney.FormatAmount(
+	result, err := humanizemoney.Formatter(
 		language.English, // locale
 		"1234567.8912",   // amount
 		"USD",            // currency code
@@ -25,7 +25,7 @@ func main() {
 	fmt.Println(result) // Output: $1,234,567.89
 
 	// Format amount for German locale
-	result, err = humanizemoney.FormatAmount(
+	result, err = humanizemoney.Formatter(
 		language.German,
 		"1234567.8912",
 		"EUR",
@@ -40,7 +40,7 @@ func main() {
 	fmt.Println(result) // Output: 1.234.567,89 €
 
 	// Format amount for Ukrainian locale
-	result, err = humanizemoney.FormatAmount(
+	result, err = humanizemoney.Formatter(
 		language.MustParse("uk"),
 		"1234567.8912",
 		"INR",
@@ -55,7 +55,7 @@ func main() {
 	fmt.Println(result) // Output: 1 234 567,891 ₴
 
 	// Format amount for Indian locale
-	result, err = humanizemoney.FormatAmount(
+	result, err = humanizemoney.Formatter(
 		language.MustParse("bn-IN"),
 		"12345678.9",
 		"INR",
