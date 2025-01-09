@@ -8,7 +8,7 @@ import (
 )
 
 func BenchmarkBojanzFormatter(b *testing.B) {
-	amt, err := currency.NewAmount("1234.56", "USD")
+	amt, err := currency.NewAmount("1234000000000000", "USD")
 	if err != nil {
 		b.Fatalf("NewAmount error: %v", err)
 	}
@@ -25,17 +25,13 @@ func BenchmarkBojanzFormatter(b *testing.B) {
 
 func BenchmarkHumanizeMoneyFormatter(b *testing.B) {
 	opts := FormatOptions{
-		Symbol:  "$",
-		Decimal: 2,
+		Symbol:   "$",
+		Decimals: 2,
 	}
-
-	locale := language.English
-	value := "1234.56"
-	currencyCode := "USD"
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_, err := Formatter(locale, value, currencyCode, opts)
+		_, err := Formatter(language.English, "1234000000000000.56", "USD", opts)
 		if err != nil {
 			b.Fatalf("Formatter returned error: %v", err)
 		}

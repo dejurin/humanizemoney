@@ -21,8 +21,8 @@ func TestFormatter_Ultimate(t *testing.T) {
 	}
 
 	opts := FormatOptions{
-		Symbol:  "$",
-		Decimal: 2,
+		Symbol:   "$",
+		Decimals: 2,
 	}
 
 	var expectedResults = map[string]map[language.Tag]string{

@@ -10,7 +10,7 @@ import (
 func TestFormatterImmutability_Simple(t *testing.T) {
 	originalValue := "1234.56"
 	valueCopy := originalValue
-	opts := FormatOptions{Symbol: "$", Decimal: 2}
+	opts := FormatOptions{Symbol: "$", Decimals: 2}
 
 	result, err := Formatter(language.English, originalValue, "USD", opts)
 	if err != nil {
@@ -30,7 +30,7 @@ func TestFormatterImmutability_Simple(t *testing.T) {
 func TestFormatterImmutability_Parallel(t *testing.T) {
 
 	originalValue := "9876543.21"
-	opts := FormatOptions{Symbol: "$", Decimal: 2}
+	opts := FormatOptions{Symbol: "$", Decimals: 2}
 
 	var wg sync.WaitGroup
 	const goroutines = 50

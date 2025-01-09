@@ -9,8 +9,8 @@ import (
 )
 
 type FormatOptions struct {
-	Symbol  string
-	Decimal int
+	Symbol   string
+	Decimals int
 }
 
 type FailedParseAmount struct {
@@ -45,8 +45,8 @@ func Formatter(locale language.Tag, value string, currencyCode string, opts Form
 		return "", FailedParseAmount{Value: value, Err: err}
 	}
 
-	if opts.Decimal > 0 {
-		amount = amount.Rescale(opts.Decimal)
+	if opts.Decimals > 0 {
+		amount = amount.Rescale(opts.Decimals)
 	} else {
 		amount = amount.RoundToCurr()
 	}
@@ -56,7 +56,7 @@ func Formatter(locale language.Tag, value string, currencyCode string, opts Form
 		return "", UnsupportedLocaleError{Locale: locale}
 	}
 
-	pattern := parseNumberPattern(schema.Standard, schema.Decimals, schema.Group)
+	pattern := parseNumberPattern(schema.Standard, schema.DecimalSep, schema.GroupSep)
 
 	numberStr := amount.Decimal().String()
 	formattedNumber := formatNumberWithPattern(numberStr, pattern)

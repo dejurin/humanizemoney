@@ -15,8 +15,8 @@ func main() {
 		"1234567.8912",   // amount
 		"USD",            // currency code
 		humanizemoney.FormatOptions{
-			Symbol:  "$", // currency symbol
-			Decimal: 2,   // decimal places
+			Symbol:   "$", // currency symbol
+			Decimals: 2,   // decimal places
 		},
 	)
 	if err != nil {
@@ -30,8 +30,8 @@ func main() {
 		"1234567.8912",
 		"EUR",
 		humanizemoney.FormatOptions{
-			Symbol:  "€",
-			Decimal: 2,
+			Symbol:   "€",
+			Decimals: 2,
 		},
 	)
 	if err != nil {
@@ -43,10 +43,10 @@ func main() {
 	result, err = humanizemoney.Formatter(
 		language.MustParse("uk"),
 		"1234567.8912",
-		"INR",
+		"UAH",
 		humanizemoney.FormatOptions{
-			Symbol:  "₴",
-			Decimal: 3,
+			Symbol:   "₴",
+			Decimals: 3,
 		},
 	)
 	if err != nil {
@@ -60,8 +60,8 @@ func main() {
 		"12345678.9",
 		"INR",
 		humanizemoney.FormatOptions{
-			Symbol:  "₹",
-			Decimal: 2,
+			Symbol:   "₹",
+			Decimals: 2,
 		},
 	)
 	if err != nil {

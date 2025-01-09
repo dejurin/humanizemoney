@@ -29,8 +29,8 @@ type cldrNumbers struct {
 		} `json:"identity"`
 		Numbers struct {
 			SymbolsNumberSystemLatn struct {
-				Decimals string `json:"decimals"`
-				Group    string `json:"group"`
+				Decimal string `json:"decimal"`
+				Group   string `json:"group"`
 			} `json:"symbols-numberSystem-latn"`
 			CurrencyFormatsNumberSystemLatn struct {
 				Standard string `json:"standard"`
@@ -41,7 +41,7 @@ type cldrNumbers struct {
 
 type NumberSystem struct {
 	Standard string
-	Decimals string
+	Decimal  string
 	Group    string
 	Name     string
 }
@@ -73,7 +73,7 @@ func main() {
 
 		for locale, content := range data.Main {
 			standard := (content.Numbers.CurrencyFormatsNumberSystemLatn.Standard)
-			decimals := (content.Numbers.SymbolsNumberSystemLatn.Decimals)
+			decimal := (content.Numbers.SymbolsNumberSystemLatn.Decimal)
 			group := (content.Numbers.SymbolsNumberSystemLatn.Group)
 
 			if standard == "" {
@@ -82,7 +82,7 @@ func main() {
 
 			dict[entry.Name] = NumberSystem{
 				Standard: standard,
-				Decimals: decimals,
+				Decimal:  decimal,
 				Group:    group,
 				Name:     entry.Name,
 			}
@@ -151,8 +151,8 @@ func generateGoFile() {
 	fmt.Println()
 	fmt.Println("type NumberSystem struct {")
 	fmt.Println("\tStandard string")
-	fmt.Println("\tDecimals  string")
-	fmt.Println("\tGroup    string")
+	fmt.Println("\tDecimalSep  string")
+	fmt.Println("\tGroupSep    string")
 	fmt.Println("}")
 	fmt.Println()
 	fmt.Println("var NumberSystemLatn = map[language.Tag]NumberSystem{")
@@ -160,11 +160,11 @@ func generateGoFile() {
 	for _, loc := range locales {
 		ns := dict[loc]
 		tagConst := mapToLangConst(loc)
-		fmt.Printf("//\t%s\n", ns.Name)
+		fmt.Printf("\t// %s\n", ns.Name)
 		fmt.Printf("\t%s: {\n", tagConst)
 		fmt.Printf("\t\tStandard: %q,\n", ns.Standard)
-		fmt.Printf("\t\tDecimals:  %q,\n", ns.Decimals)
-		fmt.Printf("\t\tGroup:    %q,\n", ns.Group)
+		fmt.Printf("\t\tDecimalSep:  %q,\n", ns.Decimal)
+		fmt.Printf("\t\tGroupSep:    %q,\n", ns.Group)
 		fmt.Println("\t},")
 	}
 	fmt.Println("}")

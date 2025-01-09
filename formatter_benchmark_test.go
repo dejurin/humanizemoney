@@ -19,11 +19,11 @@ func BenchmarkHumanizeMoneyGenerated(b *testing.B) {
 		currency string
 		opts     humanizemoney.FormatOptions
 	}{
-		{language.English, "12345.6789", "USD", humanizemoney.FormatOptions{Symbol: "$", Decimal: 2}},
-		{language.French, "12345.6789", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimal: 2}},
-		{language.Ukrainian, "12345.6789", "UAH", humanizemoney.FormatOptions{Symbol: "₴", Decimal: 3}},
-		{language.German, "9876543.21", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimal: 2}},
-		{language.MustParse("bn-IN"), "12345678.9", "INR", humanizemoney.FormatOptions{Symbol: "₹", Decimal: 2}},
+		{language.English, "12345.6789", "USD", humanizemoney.FormatOptions{Symbol: "$", Decimals: 2}},
+		{language.French, "12345.6789", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimals: 2}},
+		{language.Ukrainian, "12345.6789", "UAH", humanizemoney.FormatOptions{Symbol: "₴", Decimals: 3}},
+		{language.German, "9876543.21", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimals: 2}},
+		{language.MustParse("bn-IN"), "12345678.9", "INR", humanizemoney.FormatOptions{Symbol: "₹", Decimals: 2}},
 	}
 
 	for _, c := range cases {

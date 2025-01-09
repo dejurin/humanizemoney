@@ -8,4359 +8,4359 @@ import (
 
 type NumberSystem struct {
 	Standard string
-	Decimals  string
-	Group    string
+	DecimalSep  string
+	GroupSep    string
 }
 
 var NumberSystemLatn = map[language.Tag]NumberSystem{
-// aa
+	// aa
 	language.MustParse("aa"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// aa-DJ
+	// aa-DJ
 	language.MustParse("aa-DJ"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// aa-ER
+	// aa-ER
 	language.MustParse("aa-ER"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ab
+	// ab
 	language.MustParse("ab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// af
+	// af
 	language.Afrikaans: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// af-NA
+	// af-NA
 	language.MustParse("af-NA"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// agq
+	// agq
 	language.MustParse("agq"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ak
+	// ak
 	language.MustParse("ak"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// am
+	// am
 	language.Amharic: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// an
+	// an
 	language.MustParse("an"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ann
+	// ann
 	language.MustParse("ann"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// apc
+	// apc
 	language.MustParse("apc"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar
+	// ar
 	language.Arabic: {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-AE
+	// ar-AE
 	language.MustParse("ar-AE"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-BH
+	// ar-BH
 	language.MustParse("ar-BH"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-DJ
+	// ar-DJ
 	language.MustParse("ar-DJ"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-DZ
+	// ar-DZ
 	language.MustParse("ar-DZ"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ar-EG
+	// ar-EG
 	language.MustParse("ar-EG"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-EH
+	// ar-EH
 	language.MustParse("ar-EH"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-ER
+	// ar-ER
 	language.MustParse("ar-ER"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-IL
+	// ar-IL
 	language.MustParse("ar-IL"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-IQ
+	// ar-IQ
 	language.MustParse("ar-IQ"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-JO
+	// ar-JO
 	language.MustParse("ar-JO"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-KM
+	// ar-KM
 	language.MustParse("ar-KM"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-KW
+	// ar-KW
 	language.MustParse("ar-KW"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-LB
+	// ar-LB
 	language.MustParse("ar-LB"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ar-LY
+	// ar-LY
 	language.MustParse("ar-LY"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ar-MA
+	// ar-MA
 	language.MustParse("ar-MA"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ar-MR
+	// ar-MR
 	language.MustParse("ar-MR"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ar-OM
+	// ar-OM
 	language.MustParse("ar-OM"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-PS
+	// ar-PS
 	language.MustParse("ar-PS"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-QA
+	// ar-QA
 	language.MustParse("ar-QA"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-SA
+	// ar-SA
 	language.MustParse("ar-SA"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-SD
+	// ar-SD
 	language.MustParse("ar-SD"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-SO
+	// ar-SO
 	language.MustParse("ar-SO"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-SS
+	// ar-SS
 	language.MustParse("ar-SS"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-SY
+	// ar-SY
 	language.MustParse("ar-SY"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-TD
+	// ar-TD
 	language.MustParse("ar-TD"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ar-TN
+	// ar-TN
 	language.MustParse("ar-TN"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ar-YE
+	// ar-YE
 	language.MustParse("ar-YE"): {
 		Standard: "\u200f#,##0.00\u00a0¤;\u200f-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// arn
+	// arn
 	language.MustParse("arn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// as
+	// as
 	language.MustParse("as"): {
 		Standard: "¤\u00a0#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// asa
+	// asa
 	language.MustParse("asa"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ast
+	// ast
 	language.MustParse("ast"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// az
+	// az
 	language.Azerbaijani: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// az-Arab
+	// az-Arab
 	language.MustParse("az-Arab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// az-Arab-IQ
+	// az-Arab-IQ
 	language.MustParse("az-Arab-IQ"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// az-Arab-TR
+	// az-Arab-TR
 	language.MustParse("az-Arab-TR"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// az-Cyrl
+	// az-Cyrl
 	language.MustParse("az-Cyrl"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// az-Latn
+	// az-Latn
 	language.MustParse("az-Latn"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ba
+	// ba
 	language.MustParse("ba"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bal
+	// bal
 	language.MustParse("bal"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bal-Arab
+	// bal-Arab
 	language.MustParse("bal-Arab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bal-Latn
+	// bal-Latn
 	language.MustParse("bal-Latn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bas
+	// bas
 	language.MustParse("bas"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// be
+	// be
 	language.MustParse("be"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// be-tarask
+	// be-tarask
 	language.MustParse("be-tarask"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// bem
+	// bem
 	language.MustParse("bem"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bew
+	// bew
 	language.MustParse("bew"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bez
+	// bez
 	language.MustParse("bez"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bg
+	// bg
 	language.Bulgarian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// bgc
+	// bgc
 	language.MustParse("bgc"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bgn
+	// bgn
 	language.MustParse("bgn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  "٫",
+		GroupSep:    "،",
 	},
-// bgn-AE
+	// bgn-AE
 	language.MustParse("bgn-AE"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  "٫",
+		GroupSep:    "،",
 	},
-// bgn-AF
+	// bgn-AF
 	language.MustParse("bgn-AF"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  "٫",
+		GroupSep:    "،",
 	},
-// bgn-IR
+	// bgn-IR
 	language.MustParse("bgn-IR"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  "٫",
+		GroupSep:    "،",
 	},
-// bgn-OM
+	// bgn-OM
 	language.MustParse("bgn-OM"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  "٫",
+		GroupSep:    "،",
 	},
-// bho
+	// bho
 	language.MustParse("bho"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// blo
+	// blo
 	language.MustParse("blo"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// blt
+	// blt
 	language.MustParse("blt"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bm
+	// bm
 	language.MustParse("bm"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bm-Nkoo
+	// bm-Nkoo
 	language.MustParse("bm-Nkoo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bn
+	// bn
 	language.Bengali: {
 		Standard: "#,##,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bn-IN
+	// bn-IN
 	language.MustParse("bn-IN"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bo
+	// bo
 	language.MustParse("bo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bo-IN
+	// bo-IN
 	language.MustParse("bo-IN"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// br
+	// br
 	language.MustParse("br"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// brx
+	// brx
 	language.MustParse("brx"): {
 		Standard: "¤\u00a0#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// bs
+	// bs
 	language.MustParse("bs"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// bs-Cyrl
+	// bs-Cyrl
 	language.MustParse("bs-Cyrl"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// bs-Latn
+	// bs-Latn
 	language.MustParse("bs-Latn"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// bss
+	// bss
 	language.MustParse("bss"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// byn
+	// byn
 	language.MustParse("byn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ca
+	// ca
 	language.Catalan: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ca-AD
+	// ca-AD
 	language.MustParse("ca-AD"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ca-ES-valencia
+	// ca-ES-valencia
 	language.MustParse("ca-ES-valencia"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ca-FR
+	// ca-FR
 	language.MustParse("ca-FR"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ca-IT
+	// ca-IT
 	language.MustParse("ca-IT"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// cad
+	// cad
 	language.MustParse("cad"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// cch
+	// cch
 	language.MustParse("cch"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ccp
+	// ccp
 	language.MustParse("ccp"): {
 		Standard: "#,##,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ccp-IN
+	// ccp-IN
 	language.MustParse("ccp-IN"): {
 		Standard: "#,##,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ce
+	// ce
 	language.MustParse("ce"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ceb
+	// ceb
 	language.MustParse("ceb"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// cgg
+	// cgg
 	language.MustParse("cgg"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// cho
+	// cho
 	language.MustParse("cho"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// chr
+	// chr
 	language.MustParse("chr"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// cic
+	// cic
 	language.MustParse("cic"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ckb
+	// ckb
 	language.MustParse("ckb"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ckb-IR
+	// ckb-IR
 	language.MustParse("ckb-IR"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// co
+	// co
 	language.MustParse("co"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// cs
+	// cs
 	language.Czech: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// csw
+	// csw
 	language.MustParse("csw"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// cu
+	// cu
 	language.MustParse("cu"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// cv
+	// cv
 	language.MustParse("cv"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// cy
+	// cy
 	language.MustParse("cy"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// da
+	// da
 	language.Danish: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// da-GL
+	// da-GL
 	language.MustParse("da-GL"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// dav
+	// dav
 	language.MustParse("dav"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// de
+	// de
 	language.German: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// de-AT
+	// de-AT
 	language.MustParse("de-AT"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// de-BE
+	// de-BE
 	language.MustParse("de-BE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// de-CH
+	// de-CH
 	language.MustParse("de-CH"): {
 		Standard: "¤\u00a0#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// de-IT
+	// de-IT
 	language.MustParse("de-IT"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// de-LI
+	// de-LI
 	language.MustParse("de-LI"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// de-LU
+	// de-LU
 	language.MustParse("de-LU"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// dje
+	// dje
 	language.MustParse("dje"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ".",
+		GroupSep:    "\u00a0",
 	},
-// doi
+	// doi
 	language.MustParse("doi"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// dsb
+	// dsb
 	language.MustParse("dsb"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// dua
+	// dua
 	language.MustParse("dua"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// dv
+	// dv
 	language.MustParse("dv"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// dyo
+	// dyo
 	language.MustParse("dyo"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// dz
+	// dz
 	language.MustParse("dz"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ebu
+	// ebu
 	language.MustParse("ebu"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ee
+	// ee
 	language.MustParse("ee"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ee-TG
+	// ee-TG
 	language.MustParse("ee-TG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// el
+	// el
 	language.Greek: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// el-CY
+	// el-CY
 	language.MustParse("el-CY"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// el-polyton
+	// el-polyton
 	language.MustParse("el-polyton"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en
+	// en
 	language.English: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-001
+	// en-001
 	language.MustParse("en-001"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-150
+	// en-150
 	language.MustParse("en-150"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-AE
+	// en-AE
 	language.MustParse("en-AE"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-AG
+	// en-AG
 	language.MustParse("en-AG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-AI
+	// en-AI
 	language.MustParse("en-AI"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-AS
+	// en-AS
 	language.MustParse("en-AS"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-AT
+	// en-AT
 	language.MustParse("en-AT"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en-AU
+	// en-AU
 	language.MustParse("en-AU"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-BB
+	// en-BB
 	language.MustParse("en-BB"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-BE
+	// en-BE
 	language.MustParse("en-BE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en-BI
+	// en-BI
 	language.MustParse("en-BI"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-BM
+	// en-BM
 	language.MustParse("en-BM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-BS
+	// en-BS
 	language.MustParse("en-BS"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-BW
+	// en-BW
 	language.MustParse("en-BW"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-BZ
+	// en-BZ
 	language.MustParse("en-BZ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-CA
+	// en-CA
 	language.MustParse("en-CA"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-CC
+	// en-CC
 	language.MustParse("en-CC"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-CH
+	// en-CH
 	language.MustParse("en-CH"): {
 		Standard: "¤\u00a0#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// en-CK
+	// en-CK
 	language.MustParse("en-CK"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-CM
+	// en-CM
 	language.MustParse("en-CM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-CX
+	// en-CX
 	language.MustParse("en-CX"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-CY
+	// en-CY
 	language.MustParse("en-CY"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-DE
+	// en-DE
 	language.MustParse("en-DE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en-DG
+	// en-DG
 	language.MustParse("en-DG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-DK
+	// en-DK
 	language.MustParse("en-DK"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en-DM
+	// en-DM
 	language.MustParse("en-DM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-Dsrt
+	// en-Dsrt
 	language.MustParse("en-Dsrt"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-ER
+	// en-ER
 	language.MustParse("en-ER"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-FI
+	// en-FI
 	language.MustParse("en-FI"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// en-FJ
+	// en-FJ
 	language.MustParse("en-FJ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-FK
+	// en-FK
 	language.MustParse("en-FK"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-FM
+	// en-FM
 	language.MustParse("en-FM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GB
+	// en-GB
 	language.BritishEnglish: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GD
+	// en-GD
 	language.MustParse("en-GD"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GG
+	// en-GG
 	language.MustParse("en-GG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GH
+	// en-GH
 	language.MustParse("en-GH"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GI
+	// en-GI
 	language.MustParse("en-GI"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GM
+	// en-GM
 	language.MustParse("en-GM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GU
+	// en-GU
 	language.MustParse("en-GU"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-GY
+	// en-GY
 	language.MustParse("en-GY"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-HK
+	// en-HK
 	language.MustParse("en-HK"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-ID
+	// en-ID
 	language.MustParse("en-ID"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en-IE
+	// en-IE
 	language.MustParse("en-IE"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-IL
+	// en-IL
 	language.MustParse("en-IL"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-IM
+	// en-IM
 	language.MustParse("en-IM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-IN
+	// en-IN
 	language.MustParse("en-IN"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-IO
+	// en-IO
 	language.MustParse("en-IO"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-JE
+	// en-JE
 	language.MustParse("en-JE"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-JM
+	// en-JM
 	language.MustParse("en-JM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-KE
+	// en-KE
 	language.MustParse("en-KE"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-KI
+	// en-KI
 	language.MustParse("en-KI"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-KN
+	// en-KN
 	language.MustParse("en-KN"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-KY
+	// en-KY
 	language.MustParse("en-KY"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-LC
+	// en-LC
 	language.MustParse("en-LC"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-LR
+	// en-LR
 	language.MustParse("en-LR"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-LS
+	// en-LS
 	language.MustParse("en-LS"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MG
+	// en-MG
 	language.MustParse("en-MG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MH
+	// en-MH
 	language.MustParse("en-MH"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MO
+	// en-MO
 	language.MustParse("en-MO"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MP
+	// en-MP
 	language.MustParse("en-MP"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MS
+	// en-MS
 	language.MustParse("en-MS"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MT
+	// en-MT
 	language.MustParse("en-MT"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MU
+	// en-MU
 	language.MustParse("en-MU"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MV
+	// en-MV
 	language.MustParse("en-MV"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MW
+	// en-MW
 	language.MustParse("en-MW"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-MY
+	// en-MY
 	language.MustParse("en-MY"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-NA
+	// en-NA
 	language.MustParse("en-NA"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-NF
+	// en-NF
 	language.MustParse("en-NF"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-NG
+	// en-NG
 	language.MustParse("en-NG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-NL
+	// en-NL
 	language.MustParse("en-NL"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en-NR
+	// en-NR
 	language.MustParse("en-NR"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-NU
+	// en-NU
 	language.MustParse("en-NU"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-NZ
+	// en-NZ
 	language.MustParse("en-NZ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-PG
+	// en-PG
 	language.MustParse("en-PG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-PH
+	// en-PH
 	language.MustParse("en-PH"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-PK
+	// en-PK
 	language.MustParse("en-PK"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-PN
+	// en-PN
 	language.MustParse("en-PN"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-PR
+	// en-PR
 	language.MustParse("en-PR"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-PW
+	// en-PW
 	language.MustParse("en-PW"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-RW
+	// en-RW
 	language.MustParse("en-RW"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SB
+	// en-SB
 	language.MustParse("en-SB"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SC
+	// en-SC
 	language.MustParse("en-SC"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SD
+	// en-SD
 	language.MustParse("en-SD"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SE
+	// en-SE
 	language.MustParse("en-SE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// en-SG
+	// en-SG
 	language.MustParse("en-SG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SH
+	// en-SH
 	language.MustParse("en-SH"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SI
+	// en-SI
 	language.MustParse("en-SI"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// en-SL
+	// en-SL
 	language.MustParse("en-SL"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SS
+	// en-SS
 	language.MustParse("en-SS"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SX
+	// en-SX
 	language.MustParse("en-SX"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-SZ
+	// en-SZ
 	language.MustParse("en-SZ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-Shaw
+	// en-Shaw
 	language.MustParse("en-Shaw"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-TC
+	// en-TC
 	language.MustParse("en-TC"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-TK
+	// en-TK
 	language.MustParse("en-TK"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-TO
+	// en-TO
 	language.MustParse("en-TO"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-TT
+	// en-TT
 	language.MustParse("en-TT"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-TV
+	// en-TV
 	language.MustParse("en-TV"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-TZ
+	// en-TZ
 	language.MustParse("en-TZ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-UG
+	// en-UG
 	language.MustParse("en-UG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-UM
+	// en-UM
 	language.MustParse("en-UM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-VC
+	// en-VC
 	language.MustParse("en-VC"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-VG
+	// en-VG
 	language.MustParse("en-VG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-VI
+	// en-VI
 	language.MustParse("en-VI"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-VU
+	// en-VU
 	language.MustParse("en-VU"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-WS
+	// en-WS
 	language.MustParse("en-WS"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-ZA
+	// en-ZA
 	language.MustParse("en-ZA"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// en-ZM
+	// en-ZM
 	language.MustParse("en-ZM"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// en-ZW
+	// en-ZW
 	language.MustParse("en-ZW"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// eo
+	// eo
 	language.MustParse("eo"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// es
+	// es
 	language.Spanish: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-419
+	// es-419
 	language.LatinAmericanSpanish: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-AR
+	// es-AR
 	language.MustParse("es-AR"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-BO
+	// es-BO
 	language.MustParse("es-BO"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-BR
+	// es-BR
 	language.MustParse("es-BR"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-BZ
+	// es-BZ
 	language.MustParse("es-BZ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-CL
+	// es-CL
 	language.MustParse("es-CL"): {
 		Standard: "¤#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-CO
+	// es-CO
 	language.MustParse("es-CO"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-CR
+	// es-CR
 	language.MustParse("es-CR"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// es-CU
+	// es-CU
 	language.MustParse("es-CU"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-DO
+	// es-DO
 	language.MustParse("es-DO"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-EA
+	// es-EA
 	language.MustParse("es-EA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-EC
+	// es-EC
 	language.MustParse("es-EC"): {
 		Standard: "¤#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-GQ
+	// es-GQ
 	language.MustParse("es-GQ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-GT
+	// es-GT
 	language.MustParse("es-GT"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-HN
+	// es-HN
 	language.MustParse("es-HN"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-IC
+	// es-IC
 	language.MustParse("es-IC"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-MX
+	// es-MX
 	language.MustParse("es-MX"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-NI
+	// es-NI
 	language.MustParse("es-NI"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-PA
+	// es-PA
 	language.MustParse("es-PA"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-PE
+	// es-PE
 	language.MustParse("es-PE"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-PH
+	// es-PH
 	language.MustParse("es-PH"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-PR
+	// es-PR
 	language.MustParse("es-PR"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-PY
+	// es-PY
 	language.MustParse("es-PY"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-SV
+	// es-SV
 	language.MustParse("es-SV"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-US
+	// es-US
 	language.MustParse("es-US"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// es-UY
+	// es-UY
 	language.MustParse("es-UY"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// es-VE
+	// es-VE
 	language.MustParse("es-VE"): {
 		Standard: "¤#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// et
+	// et
 	language.Estonian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// eu
+	// eu
 	language.MustParse("eu"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ewo
+	// ewo
 	language.MustParse("ewo"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// fa
+	// fa
 	language.Persian: {
 		Standard: "\u200e¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// fa-AF
+	// fa-AF
 	language.MustParse("fa-AF"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ff
+	// ff
 	language.MustParse("ff"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Adlm
+	// ff-Adlm
 	language.MustParse("ff-Adlm"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-BF
+	// ff-Adlm-BF
 	language.MustParse("ff-Adlm-BF"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-CM
+	// ff-Adlm-CM
 	language.MustParse("ff-Adlm-CM"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-GH
+	// ff-Adlm-GH
 	language.MustParse("ff-Adlm-GH"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-GM
+	// ff-Adlm-GM
 	language.MustParse("ff-Adlm-GM"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-GW
+	// ff-Adlm-GW
 	language.MustParse("ff-Adlm-GW"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-LR
+	// ff-Adlm-LR
 	language.MustParse("ff-Adlm-LR"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-MR
+	// ff-Adlm-MR
 	language.MustParse("ff-Adlm-MR"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-NE
+	// ff-Adlm-NE
 	language.MustParse("ff-Adlm-NE"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-NG
+	// ff-Adlm-NG
 	language.MustParse("ff-Adlm-NG"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-SL
+	// ff-Adlm-SL
 	language.MustParse("ff-Adlm-SL"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Adlm-SN
+	// ff-Adlm-SN
 	language.MustParse("ff-Adlm-SN"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "⹁",
+		DecimalSep:  ".",
+		GroupSep:    "⹁",
 	},
-// ff-Latn
+	// ff-Latn
 	language.MustParse("ff-Latn"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-BF
+	// ff-Latn-BF
 	language.MustParse("ff-Latn-BF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-CM
+	// ff-Latn-CM
 	language.MustParse("ff-Latn-CM"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-GH
+	// ff-Latn-GH
 	language.MustParse("ff-Latn-GH"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-GM
+	// ff-Latn-GM
 	language.MustParse("ff-Latn-GM"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-GN
+	// ff-Latn-GN
 	language.MustParse("ff-Latn-GN"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-GW
+	// ff-Latn-GW
 	language.MustParse("ff-Latn-GW"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-LR
+	// ff-Latn-LR
 	language.MustParse("ff-Latn-LR"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-MR
+	// ff-Latn-MR
 	language.MustParse("ff-Latn-MR"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-NE
+	// ff-Latn-NE
 	language.MustParse("ff-Latn-NE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-NG
+	// ff-Latn-NG
 	language.MustParse("ff-Latn-NG"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ff-Latn-SL
+	// ff-Latn-SL
 	language.MustParse("ff-Latn-SL"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// fi
+	// fi
 	language.Finnish: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// fil
+	// fil
 	language.Filipino: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// fo
+	// fo
 	language.MustParse("fo"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// fo-DK
+	// fo-DK
 	language.MustParse("fo-DK"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// fr
+	// fr
 	language.French: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-BE
+	// fr-BE
 	language.MustParse("fr-BE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-BF
+	// fr-BF
 	language.MustParse("fr-BF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-BI
+	// fr-BI
 	language.MustParse("fr-BI"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-BJ
+	// fr-BJ
 	language.MustParse("fr-BJ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-BL
+	// fr-BL
 	language.MustParse("fr-BL"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-CA
+	// fr-CA
 	language.MustParse("fr-CA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// fr-CD
+	// fr-CD
 	language.MustParse("fr-CD"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-CF
+	// fr-CF
 	language.MustParse("fr-CF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-CG
+	// fr-CG
 	language.MustParse("fr-CG"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-CH
+	// fr-CH
 	language.MustParse("fr-CH"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-CI
+	// fr-CI
 	language.MustParse("fr-CI"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-CM
+	// fr-CM
 	language.MustParse("fr-CM"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-DJ
+	// fr-DJ
 	language.MustParse("fr-DJ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-DZ
+	// fr-DZ
 	language.MustParse("fr-DZ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-GA
+	// fr-GA
 	language.MustParse("fr-GA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-GF
+	// fr-GF
 	language.MustParse("fr-GF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-GN
+	// fr-GN
 	language.MustParse("fr-GN"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-GP
+	// fr-GP
 	language.MustParse("fr-GP"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-GQ
+	// fr-GQ
 	language.MustParse("fr-GQ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-HT
+	// fr-HT
 	language.MustParse("fr-HT"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-KM
+	// fr-KM
 	language.MustParse("fr-KM"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-LU
+	// fr-LU
 	language.MustParse("fr-LU"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// fr-MA
+	// fr-MA
 	language.MustParse("fr-MA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// fr-MC
+	// fr-MC
 	language.MustParse("fr-MC"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-MF
+	// fr-MF
 	language.MustParse("fr-MF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-MG
+	// fr-MG
 	language.MustParse("fr-MG"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-ML
+	// fr-ML
 	language.MustParse("fr-ML"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-MQ
+	// fr-MQ
 	language.MustParse("fr-MQ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-MR
+	// fr-MR
 	language.MustParse("fr-MR"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-MU
+	// fr-MU
 	language.MustParse("fr-MU"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-NC
+	// fr-NC
 	language.MustParse("fr-NC"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-NE
+	// fr-NE
 	language.MustParse("fr-NE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-PF
+	// fr-PF
 	language.MustParse("fr-PF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-PM
+	// fr-PM
 	language.MustParse("fr-PM"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-RE
+	// fr-RE
 	language.MustParse("fr-RE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-RW
+	// fr-RW
 	language.MustParse("fr-RW"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-SC
+	// fr-SC
 	language.MustParse("fr-SC"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-SN
+	// fr-SN
 	language.MustParse("fr-SN"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-SY
+	// fr-SY
 	language.MustParse("fr-SY"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-TD
+	// fr-TD
 	language.MustParse("fr-TD"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-TG
+	// fr-TG
 	language.MustParse("fr-TG"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-TN
+	// fr-TN
 	language.MustParse("fr-TN"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-VU
+	// fr-VU
 	language.MustParse("fr-VU"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-WF
+	// fr-WF
 	language.MustParse("fr-WF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// fr-YT
+	// fr-YT
 	language.MustParse("fr-YT"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// frr
+	// frr
 	language.MustParse("frr"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// fur
+	// fur
 	language.MustParse("fur"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// fy
+	// fy
 	language.MustParse("fy"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0#,##0.00-",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ga
+	// ga
 	language.MustParse("ga"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ga-GB
+	// ga-GB
 	language.MustParse("ga-GB"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// gaa
+	// gaa
 	language.MustParse("gaa"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// gd
+	// gd
 	language.MustParse("gd"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// gez
+	// gez
 	language.MustParse("gez"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// gez-ER
+	// gez-ER
 	language.MustParse("gez-ER"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// gl
+	// gl
 	language.MustParse("gl"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// gn
+	// gn
 	language.MustParse("gn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// gsw
+	// gsw
 	language.MustParse("gsw"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// gsw-FR
+	// gsw-FR
 	language.MustParse("gsw-FR"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// gsw-LI
+	// gsw-LI
 	language.MustParse("gsw-LI"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// gu
+	// gu
 	language.Gujarati: {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// guz
+	// guz
 	language.MustParse("guz"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// gv
+	// gv
 	language.MustParse("gv"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ha
+	// ha
 	language.MustParse("ha"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ha-Arab
+	// ha-Arab
 	language.MustParse("ha-Arab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ha-Arab-SD
+	// ha-Arab-SD
 	language.MustParse("ha-Arab-SD"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ha-GH
+	// ha-GH
 	language.MustParse("ha-GH"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ha-NE
+	// ha-NE
 	language.MustParse("ha-NE"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// haw
+	// haw
 	language.MustParse("haw"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// he
+	// he
 	language.Hebrew: {
 		Standard: "\u200f#,##0.00\u00a0\u200f¤;\u200f-#,##0.00\u00a0\u200f¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// hi
+	// hi
 	language.Hindi: {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// hi-Latn
+	// hi-Latn
 	language.MustParse("hi-Latn"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// hnj
+	// hnj
 	language.MustParse("hnj"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// hnj-Hmnp
+	// hnj-Hmnp
 	language.MustParse("hnj-Hmnp"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// hr
+	// hr
 	language.Croatian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// hr-BA
+	// hr-BA
 	language.MustParse("hr-BA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// hsb
+	// hsb
 	language.MustParse("hsb"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// hu
+	// hu
 	language.Hungarian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// hy
+	// hy
 	language.Armenian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ia
+	// ia
 	language.MustParse("ia"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// id
+	// id
 	language.Indonesian: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ie
+	// ie
 	language.MustParse("ie"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ig
+	// ig
 	language.MustParse("ig"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ii
+	// ii
 	language.MustParse("ii"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// io
+	// io
 	language.MustParse("io"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// is
+	// is
 	language.Icelandic: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// it
+	// it
 	language.Italian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// it-CH
+	// it-CH
 	language.MustParse("it-CH"): {
 		Standard: "¤\u00a0#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// it-SM
+	// it-SM
 	language.MustParse("it-SM"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// it-VA
+	// it-VA
 	language.MustParse("it-VA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// iu
+	// iu
 	language.MustParse("iu"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// iu-Latn
+	// iu-Latn
 	language.MustParse("iu-Latn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ja
+	// ja
 	language.Japanese: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// jbo
+	// jbo
 	language.MustParse("jbo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// jgo
+	// jgo
 	language.MustParse("jgo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// jmc
+	// jmc
 	language.MustParse("jmc"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// jv
+	// jv
 	language.MustParse("jv"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ka
+	// ka
 	language.Georgian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// kaa
+	// kaa
 	language.MustParse("kaa"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kaa-Cyrl
+	// kaa-Cyrl
 	language.MustParse("kaa-Cyrl"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kaa-Latn
+	// kaa-Latn
 	language.MustParse("kaa-Latn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kab
+	// kab
 	language.MustParse("kab"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// kaj
+	// kaj
 	language.MustParse("kaj"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kam
+	// kam
 	language.MustParse("kam"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kcg
+	// kcg
 	language.MustParse("kcg"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kde
+	// kde
 	language.MustParse("kde"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kea
+	// kea
 	language.MustParse("kea"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ken
+	// ken
 	language.MustParse("ken"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kgp
+	// kgp
 	language.MustParse("kgp"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// khq
+	// khq
 	language.MustParse("khq"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ".",
+		GroupSep:    "\u00a0",
 	},
-// ki
+	// ki
 	language.MustParse("ki"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kk
+	// kk
 	language.Kazakh: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// kk-Arab
+	// kk-Arab
 	language.MustParse("kk-Arab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kk-Cyrl
+	// kk-Cyrl
 	language.MustParse("kk-Cyrl"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// kk-KZ
+	// kk-KZ
 	language.MustParse("kk-KZ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// kkj
+	// kkj
 	language.MustParse("kkj"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// kl
+	// kl
 	language.MustParse("kl"): {
 		Standard: "¤#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// kln
+	// kln
 	language.MustParse("kln"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// km
+	// km
 	language.Khmer: {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kn
+	// kn
 	language.Kannada: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ko
+	// ko
 	language.Korean: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ko-CN
+	// ko-CN
 	language.MustParse("ko-CN"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ko-KP
+	// ko-KP
 	language.MustParse("ko-KP"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kok
+	// kok
 	language.MustParse("kok"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kok-Deva
+	// kok-Deva
 	language.MustParse("kok-Deva"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kok-Latn
+	// kok-Latn
 	language.MustParse("kok-Latn"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kpe
+	// kpe
 	language.MustParse("kpe"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kpe-GN
+	// kpe-GN
 	language.MustParse("kpe-GN"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ks
+	// ks
 	language.MustParse("ks"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  ".",
+		GroupSep:    "،",
 	},
-// ks-Arab
+	// ks-Arab
 	language.MustParse("ks-Arab"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  ".",
+		GroupSep:    "،",
 	},
-// ks-Deva
+	// ks-Deva
 	language.MustParse("ks-Deva"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ksb
+	// ksb
 	language.MustParse("ksb"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ksf
+	// ksf
 	language.MustParse("ksf"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ksh
+	// ksh
 	language.MustParse("ksh"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ku
+	// ku
 	language.MustParse("ku"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// kw
+	// kw
 	language.MustParse("kw"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kxv
+	// kxv
 	language.MustParse("kxv"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kxv-Deva
+	// kxv-Deva
 	language.MustParse("kxv-Deva"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kxv-Latn
+	// kxv-Latn
 	language.MustParse("kxv-Latn"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kxv-Orya
+	// kxv-Orya
 	language.MustParse("kxv-Orya"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// kxv-Telu
+	// kxv-Telu
 	language.MustParse("kxv-Telu"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ky
+	// ky
 	language.Kirghiz: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// la
+	// la
 	language.MustParse("la"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lag
+	// lag
 	language.MustParse("lag"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lb
+	// lb
 	language.MustParse("lb"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// lg
+	// lg
 	language.MustParse("lg"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lij
+	// lij
 	language.MustParse("lij"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// lkt
+	// lkt
 	language.MustParse("lkt"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lld
+	// lld
 	language.MustParse("lld"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// lmo
+	// lmo
 	language.MustParse("lmo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ",",
+		GroupSep:    "’",
 	},
-// ln
+	// ln
 	language.MustParse("ln"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ln-AO
+	// ln-AO
 	language.MustParse("ln-AO"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ln-CF
+	// ln-CF
 	language.MustParse("ln-CF"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ln-CG
+	// ln-CG
 	language.MustParse("ln-CG"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// lo
+	// lo
 	language.Lao: {
 		Standard: "¤#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// lrc
+	// lrc
 	language.MustParse("lrc"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lrc-IQ
+	// lrc-IQ
 	language.MustParse("lrc-IQ"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lt
+	// lt
 	language.Lithuanian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ltg
+	// ltg
 	language.MustParse("ltg"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lu
+	// lu
 	language.MustParse("lu"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// luo
+	// luo
 	language.MustParse("luo"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// luy
+	// luy
 	language.MustParse("luy"): {
 		Standard: "¤#,##0.00;¤-\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// lv
+	// lv
 	language.Latvian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// mai
+	// mai
 	language.MustParse("mai"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mas
+	// mas
 	language.MustParse("mas"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mas-TZ
+	// mas-TZ
 	language.MustParse("mas-TZ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mdf
+	// mdf
 	language.MustParse("mdf"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mer
+	// mer
 	language.MustParse("mer"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mfe
+	// mfe
 	language.MustParse("mfe"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ".",
+		GroupSep:    "\u00a0",
 	},
-// mg
+	// mg
 	language.MustParse("mg"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mgh
+	// mgh
 	language.MustParse("mgh"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// mgo
+	// mgo
 	language.MustParse("mgo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mhn
+	// mhn
 	language.MustParse("mhn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mi
+	// mi
 	language.MustParse("mi"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mic
+	// mic
 	language.MustParse("mic"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mk
+	// mk
 	language.Macedonian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ml
+	// ml
 	language.Malayalam: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mn
+	// mn
 	language.Mongolian: {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mn-Mong
+	// mn-Mong
 	language.MustParse("mn-Mong"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mn-Mong-MN
+	// mn-Mong-MN
 	language.MustParse("mn-Mong-MN"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mni
+	// mni
 	language.MustParse("mni"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mni-Beng
+	// mni-Beng
 	language.MustParse("mni-Beng"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mni-Mtei
+	// mni-Mtei
 	language.MustParse("mni-Mtei"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// moh
+	// moh
 	language.MustParse("moh"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mr
+	// mr
 	language.Marathi: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ms
+	// ms
 	language.Malay: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ms-Arab
+	// ms-Arab
 	language.MustParse("ms-Arab"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ms-Arab-BN
+	// ms-Arab-BN
 	language.MustParse("ms-Arab-BN"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ms-BN
+	// ms-BN
 	language.MustParse("ms-BN"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ms-ID
+	// ms-ID
 	language.MustParse("ms-ID"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ms-SG
+	// ms-SG
 	language.MustParse("ms-SG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mt
+	// mt
 	language.MustParse("mt"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mua
+	// mua
 	language.MustParse("mua"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// mus
+	// mus
 	language.MustParse("mus"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// my
+	// my
 	language.Burmese: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// myv
+	// myv
 	language.MustParse("myv"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// mzn
+	// mzn
 	language.MustParse("mzn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// naq
+	// naq
 	language.MustParse("naq"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// nb
+	// nb
 	language.MustParse("nb"): {
 		Standard: "#,##0.00\u00a0¤;-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// nb-SJ
+	// nb-SJ
 	language.MustParse("nb-SJ"): {
 		Standard: "#,##0.00\u00a0¤;-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// nd
+	// nd
 	language.MustParse("nd"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// nds
+	// nds
 	language.MustParse("nds"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nds-NL
+	// nds-NL
 	language.MustParse("nds-NL"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ne
+	// ne
 	language.Nepali: {
 		Standard: "¤\u00a0#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ne-IN
+	// ne-IN
 	language.MustParse("ne-IN"): {
 		Standard: "¤\u00a0#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// nl
+	// nl
 	language.Dutch: {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nl-AW
+	// nl-AW
 	language.MustParse("nl-AW"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nl-BE
+	// nl-BE
 	language.MustParse("nl-BE"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nl-BQ
+	// nl-BQ
 	language.MustParse("nl-BQ"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nl-CW
+	// nl-CW
 	language.MustParse("nl-CW"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nl-SR
+	// nl-SR
 	language.MustParse("nl-SR"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nl-SX
+	// nl-SX
 	language.MustParse("nl-SX"): {
 		Standard: "¤\u00a0#,##0.00;¤\u00a0-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// nmg
+	// nmg
 	language.MustParse("nmg"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// nn
+	// nn
 	language.MustParse("nn"): {
 		Standard: "#,##0.00\u00a0¤;-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// nnh
+	// nnh
 	language.MustParse("nnh"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// no
+	// no
 	language.Norwegian: {
 		Standard: "#,##0.00\u00a0¤;-#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// nqo
+	// nqo
 	language.MustParse("nqo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "،",
+		DecimalSep:  ".",
+		GroupSep:    "،",
 	},
-// nr
+	// nr
 	language.MustParse("nr"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// nso
+	// nso
 	language.MustParse("nso"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ".",
+		GroupSep:    "\u00a0",
 	},
-// nus
+	// nus
 	language.MustParse("nus"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// nv
+	// nv
 	language.MustParse("nv"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ny
+	// ny
 	language.MustParse("ny"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// nyn
+	// nyn
 	language.MustParse("nyn"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// oc
+	// oc
 	language.MustParse("oc"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// oc-ES
+	// oc-ES
 	language.MustParse("oc-ES"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// om
+	// om
 	language.MustParse("om"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// om-KE
+	// om-KE
 	language.MustParse("om-KE"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// or
+	// or
 	language.MustParse("or"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// os
+	// os
 	language.MustParse("os"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// os-RU
+	// os-RU
 	language.MustParse("os-RU"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// osa
+	// osa
 	language.MustParse("osa"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pa
+	// pa
 	language.Punjabi: {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pa-Arab
+	// pa-Arab
 	language.MustParse("pa-Arab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pa-Guru
+	// pa-Guru
 	language.MustParse("pa-Guru"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pap
+	// pap
 	language.MustParse("pap"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pap-AW
+	// pap-AW
 	language.MustParse("pap-AW"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pcm
+	// pcm
 	language.MustParse("pcm"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pis
+	// pis
 	language.MustParse("pis"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// pl
+	// pl
 	language.Polish: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// prg
+	// prg
 	language.MustParse("prg"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ps
+	// ps
 	language.MustParse("ps"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ps-PK
+	// ps-PK
 	language.MustParse("ps-PK"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// pt
+	// pt
 	language.Portuguese: {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// pt-AO
+	// pt-AO
 	language.MustParse("pt-AO"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-CH
+	// pt-CH
 	language.MustParse("pt-CH"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-CV
+	// pt-CV
 	language.MustParse("pt-CV"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-GQ
+	// pt-GQ
 	language.MustParse("pt-GQ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-GW
+	// pt-GW
 	language.MustParse("pt-GW"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-LU
+	// pt-LU
 	language.MustParse("pt-LU"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-MO
+	// pt-MO
 	language.MustParse("pt-MO"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-MZ
+	// pt-MZ
 	language.MustParse("pt-MZ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-PT
+	// pt-PT
 	language.EuropeanPortuguese: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-ST
+	// pt-ST
 	language.MustParse("pt-ST"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// pt-TL
+	// pt-TL
 	language.MustParse("pt-TL"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// qu
+	// qu
 	language.MustParse("qu"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// qu-BO
+	// qu-BO
 	language.MustParse("qu-BO"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// qu-EC
+	// qu-EC
 	language.MustParse("qu-EC"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// quc
+	// quc
 	language.MustParse("quc"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// raj
+	// raj
 	language.MustParse("raj"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// rhg
+	// rhg
 	language.MustParse("rhg"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// rhg-Rohg
+	// rhg-Rohg
 	language.MustParse("rhg-Rohg"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// rhg-Rohg-BD
+	// rhg-Rohg-BD
 	language.MustParse("rhg-Rohg-BD"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// rif
+	// rif
 	language.MustParse("rif"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// rm
+	// rm
 	language.MustParse("rm"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// rn
+	// rn
 	language.MustParse("rn"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ro
+	// ro
 	language.Romanian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ro-MD
+	// ro-MD
 	language.MustParse("ro-MD"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// rof
+	// rof
 	language.MustParse("rof"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ru
+	// ru
 	language.Russian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ru-BY
+	// ru-BY
 	language.MustParse("ru-BY"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ru-KG
+	// ru-KG
 	language.MustParse("ru-KG"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ru-KZ
+	// ru-KZ
 	language.MustParse("ru-KZ"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ru-MD
+	// ru-MD
 	language.MustParse("ru-MD"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ru-UA
+	// ru-UA
 	language.MustParse("ru-UA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// rw
+	// rw
 	language.MustParse("rw"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// rwk
+	// rwk
 	language.MustParse("rwk"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sa
+	// sa
 	language.MustParse("sa"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sah
+	// sah
 	language.MustParse("sah"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// saq
+	// saq
 	language.MustParse("saq"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sat
+	// sat
 	language.MustParse("sat"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sat-Deva
+	// sat-Deva
 	language.MustParse("sat-Deva"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sat-Olck
+	// sat-Olck
 	language.MustParse("sat-Olck"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sbp
+	// sbp
 	language.MustParse("sbp"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sc
+	// sc
 	language.MustParse("sc"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// scn
+	// scn
 	language.MustParse("scn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sd
+	// sd
 	language.MustParse("sd"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sd-Arab
+	// sd-Arab
 	language.MustParse("sd-Arab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sd-Deva
+	// sd-Deva
 	language.MustParse("sd-Deva"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sdh
+	// sdh
 	language.MustParse("sdh"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sdh-IQ
+	// sdh-IQ
 	language.MustParse("sdh-IQ"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// se
+	// se
 	language.MustParse("se"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// se-FI
+	// se-FI
 	language.MustParse("se-FI"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// se-SE
+	// se-SE
 	language.MustParse("se-SE"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// seh
+	// seh
 	language.MustParse("seh"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ses
+	// ses
 	language.MustParse("ses"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ".",
+		GroupSep:    "\u00a0",
 	},
-// sg
+	// sg
 	language.MustParse("sg"): {
 		Standard: "¤#,##0.00;¤-#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// shi
+	// shi
 	language.MustParse("shi"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// shi-Latn
+	// shi-Latn
 	language.MustParse("shi-Latn"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// shi-Tfng
+	// shi-Tfng
 	language.MustParse("shi-Tfng"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// shn
+	// shn
 	language.MustParse("shn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// shn-TH
+	// shn-TH
 	language.MustParse("shn-TH"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// si
+	// si
 	language.Sinhala: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sid
+	// sid
 	language.MustParse("sid"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sk
+	// sk
 	language.Slovak: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// skr
+	// skr
 	language.MustParse("skr"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sl
+	// sl
 	language.Slovenian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sma
+	// sma
 	language.MustParse("sma"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sma-NO
+	// sma-NO
 	language.MustParse("sma-NO"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// smj
+	// smj
 	language.MustParse("smj"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// smj-NO
+	// smj-NO
 	language.MustParse("smj-NO"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// smn
+	// smn
 	language.MustParse("smn"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// sms
+	// sms
 	language.MustParse("sms"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sn
+	// sn
 	language.MustParse("sn"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// so
+	// so
 	language.MustParse("so"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// so-DJ
+	// so-DJ
 	language.MustParse("so-DJ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// so-ET
+	// so-ET
 	language.MustParse("so-ET"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// so-KE
+	// so-KE
 	language.MustParse("so-KE"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sq
+	// sq
 	language.Albanian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// sq-MK
+	// sq-MK
 	language.MustParse("sq-MK"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// sq-XK
+	// sq-XK
 	language.MustParse("sq-XK"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// sr
+	// sr
 	language.Serbian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Cyrl
+	// sr-Cyrl
 	language.MustParse("sr-Cyrl"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Cyrl-BA
+	// sr-Cyrl-BA
 	language.MustParse("sr-Cyrl-BA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Cyrl-ME
+	// sr-Cyrl-ME
 	language.MustParse("sr-Cyrl-ME"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Cyrl-XK
+	// sr-Cyrl-XK
 	language.MustParse("sr-Cyrl-XK"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Latn
+	// sr-Latn
 	language.SerbianLatin: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Latn-BA
+	// sr-Latn-BA
 	language.MustParse("sr-Latn-BA"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Latn-ME
+	// sr-Latn-ME
 	language.MustParse("sr-Latn-ME"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sr-Latn-XK
+	// sr-Latn-XK
 	language.MustParse("sr-Latn-XK"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// ss
+	// ss
 	language.MustParse("ss"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ss-SZ
+	// ss-SZ
 	language.MustParse("ss-SZ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ssy
+	// ssy
 	language.MustParse("ssy"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// st
+	// st
 	language.MustParse("st"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// st-LS
+	// st-LS
 	language.MustParse("st-LS"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// su
+	// su
 	language.MustParse("su"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// su-Latn
+	// su-Latn
 	language.MustParse("su-Latn"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sv
+	// sv
 	language.Swedish: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// sv-AX
+	// sv-AX
 	language.MustParse("sv-AX"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// sv-FI
+	// sv-FI
 	language.MustParse("sv-FI"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// sw
+	// sw
 	language.Swahili: {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sw-CD
+	// sw-CD
 	language.MustParse("sw-CD"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// sw-KE
+	// sw-KE
 	language.MustParse("sw-KE"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// sw-UG
+	// sw-UG
 	language.MustParse("sw-UG"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// syr
+	// syr
 	language.MustParse("syr"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// syr-SY
+	// syr-SY
 	language.MustParse("syr-SY"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// szl
+	// szl
 	language.MustParse("szl"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ta
+	// ta
 	language.Tamil: {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ta-LK
+	// ta-LK
 	language.MustParse("ta-LK"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ta-MY
+	// ta-MY
 	language.MustParse("ta-MY"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ta-SG
+	// ta-SG
 	language.MustParse("ta-SG"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// te
+	// te
 	language.Telugu: {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// teo
+	// teo
 	language.MustParse("teo"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// teo-KE
+	// teo-KE
 	language.MustParse("teo-KE"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// tg
+	// tg
 	language.MustParse("tg"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// th
+	// th
 	language.Thai: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ti
+	// ti
 	language.MustParse("ti"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ti-ER
+	// ti-ER
 	language.MustParse("ti-ER"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// tig
+	// tig
 	language.MustParse("tig"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// tk
+	// tk
 	language.MustParse("tk"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// tn
+	// tn
 	language.MustParse("tn"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// tn-BW
+	// tn-BW
 	language.MustParse("tn-BW"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ".",
+		GroupSep:    "’",
 	},
-// to
+	// to
 	language.MustParse("to"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// tok
+	// tok
 	language.MustParse("tok"): {
 		Standard: "¤#,#0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// tpi
+	// tpi
 	language.MustParse("tpi"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// tr
+	// tr
 	language.Turkish: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// tr-CY
+	// tr-CY
 	language.MustParse("tr-CY"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// trv
+	// trv
 	language.MustParse("trv"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// trw
+	// trw
 	language.MustParse("trw"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ts
+	// ts
 	language.MustParse("ts"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// tt
+	// tt
 	language.MustParse("tt"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// twq
+	// twq
 	language.MustParse("twq"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ".",
+		GroupSep:    "\u00a0",
 	},
-// tyv
+	// tyv
 	language.MustParse("tyv"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// tzm
+	// tzm
 	language.MustParse("tzm"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// ug
+	// ug
 	language.MustParse("ug"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// uk
+	// uk
 	language.Ukrainian: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// und
+	// und
 	language.MustParse("und"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ur
+	// ur
 	language.Urdu: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ur-IN
+	// ur-IN
 	language.MustParse("ur-IN"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// uz
+	// uz
 	language.Uzbek: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// uz-Arab
+	// uz-Arab
 	language.MustParse("uz-Arab"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// uz-Cyrl
+	// uz-Cyrl
 	language.MustParse("uz-Cyrl"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// uz-Latn
+	// uz-Latn
 	language.MustParse("uz-Latn"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// vai
+	// vai
 	language.MustParse("vai"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// vai-Latn
+	// vai-Latn
 	language.MustParse("vai-Latn"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// vai-Vaii
+	// vai-Vaii
 	language.MustParse("vai-Vaii"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// ve
+	// ve
 	language.MustParse("ve"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// vec
+	// vec
 	language.MustParse("vec"): {
 		Standard: "#,##0.00\u202f¤",
-		Decimals:  "",
-		Group:    "\u202f",
+		DecimalSep:  ",",
+		GroupSep:    "\u202f",
 	},
-// vi
+	// vi
 	language.Vietnamese: {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// vmw
+	// vmw
 	language.MustParse("vmw"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// vo
+	// vo
 	language.MustParse("vo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// vun
+	// vun
 	language.MustParse("vun"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// wa
+	// wa
 	language.MustParse("wa"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// wae
+	// wae
 	language.MustParse("wae"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    "’",
+		DecimalSep:  ",",
+		GroupSep:    "’",
 	},
-// wal
+	// wal
 	language.MustParse("wal"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// wbp
+	// wbp
 	language.MustParse("wbp"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// wo
+	// wo
 	language.MustParse("wo"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// xh
+	// xh
 	language.MustParse("xh"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ".",
+		GroupSep:    "\u00a0",
 	},
-// xnr
+	// xnr
 	language.MustParse("xnr"): {
 		Standard: "¤#,##,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// xog
+	// xog
 	language.MustParse("xog"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// yav
+	// yav
 	language.MustParse("yav"): {
 		Standard: "#,##0.00\u00a0¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// yi
+	// yi
 	language.MustParse("yi"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// yo
+	// yo
 	language.MustParse("yo"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// yo-BJ
+	// yo-BJ
 	language.MustParse("yo-BJ"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// yrl
+	// yrl
 	language.MustParse("yrl"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// yrl-CO
+	// yrl-CO
 	language.MustParse("yrl-CO"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// yrl-VE
+	// yrl-VE
 	language.MustParse("yrl-VE"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ".",
+		DecimalSep:  ",",
+		GroupSep:    ".",
 	},
-// yue
+	// yue
 	language.MustParse("yue"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// yue-Hans
+	// yue-Hans
 	language.MustParse("yue-Hans"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// yue-Hant
+	// yue-Hant
 	language.MustParse("yue-Hant"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// yue-Hant-CN
+	// yue-Hant-CN
 	language.MustParse("yue-Hant-CN"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// za
+	// za
 	language.MustParse("za"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zgh
+	// zgh
 	language.MustParse("zgh"): {
 		Standard: "#,##0.00¤",
-		Decimals:  "",
-		Group:    "\u00a0",
+		DecimalSep:  ",",
+		GroupSep:    "\u00a0",
 	},
-// zh
+	// zh
 	language.Chinese: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hans
+	// zh-Hans
 	language.SimplifiedChinese: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hans-HK
+	// zh-Hans-HK
 	language.MustParse("zh-Hans-HK"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hans-MO
+	// zh-Hans-MO
 	language.MustParse("zh-Hans-MO"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hans-MY
+	// zh-Hans-MY
 	language.MustParse("zh-Hans-MY"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hans-SG
+	// zh-Hans-SG
 	language.MustParse("zh-Hans-SG"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hant
+	// zh-Hant
 	language.TraditionalChinese: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hant-HK
+	// zh-Hant-HK
 	language.MustParse("zh-Hant-HK"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hant-MO
+	// zh-Hant-MO
 	language.MustParse("zh-Hant-MO"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Hant-MY
+	// zh-Hant-MY
 	language.MustParse("zh-Hant-MY"): {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zh-Latn
+	// zh-Latn
 	language.MustParse("zh-Latn"): {
 		Standard: "¤\u00a0#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
-// zu
+	// zu
 	language.Zulu: {
 		Standard: "¤#,##0.00",
-		Decimals:  "",
-		Group:    ",",
+		DecimalSep:  ".",
+		GroupSep:    ",",
 	},
 }
