@@ -1,3 +1,7 @@
+// go test -bench=BenchmarkHumanizeMoneyGenerated -benchmem -cpuprofile cpu.prof -memprofile mem.prof
+// go tool pprof -http=:8080 cpu.prof
+// go tool pprof -http=:8081 mem.prof
+
 package humanizemoney_test
 
 import (
@@ -9,37 +13,23 @@ import (
 )
 
 func BenchmarkHumanizeMoneyGenerated(b *testing.B) {
-	opts := humanizemoney.FormatOptions{
-		Symbol:  "$",
-		Decimal: 4,
-	}
-	for i := 0; i < b.N; i++ {
-		_, err := humanizemoney.FormatAmount(language.English, "12345.6788912", "USD", opts)
-		if err != nil {
-			b.Fatalf("failed to format amount: %v", err)
-		}
-	}
-}
-
-func BenchmarkHumanizeMoneyDifferentLocales(b *testing.B) {
-	locales := []struct {
-		locale         language.Tag
-		currencyCode   string
-		currencySymbol string
+	cases := []struct {
+		locale   language.Tag
+		value    string
+		currency string
+		opts     humanizemoney.FormatOptions
 	}{
-		{language.English, "USD", "$"},
-		{language.French, "EUR", "€"},
-		{language.Ukrainian, "UAH", "грн."},
+		{language.English, "12345.6789", "USD", humanizemoney.FormatOptions{Symbol: "$", Decimal: 2}},
+		{language.French, "12345.6789", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimal: 2}},
+		{language.Ukrainian, "12345.6789", "UAH", humanizemoney.FormatOptions{Symbol: "₴", Decimal: 3}},
+		{language.German, "9876543.21", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimal: 2}},
+		{language.MustParse("bn-IN"), "12345678.9", "INR", humanizemoney.FormatOptions{Symbol: "₹", Decimal: 2}},
 	}
 
-	for _, loc := range locales {
-		b.Run(loc.currencyCode, func(b *testing.B) {
-			opts := humanizemoney.FormatOptions{
-				Symbol:  loc.currencySymbol,
-				Decimal: 4,
-			}
+	for _, c := range cases {
+		b.Run(c.locale.String(), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
-				_, err := humanizemoney.FormatAmount(loc.locale, "12345.6788912", loc.currencyCode, opts)
+				_, err := humanizemoney.FormatAmount(c.locale, c.value, c.currency, c.opts)
 				if err != nil {
 					b.Fatalf("failed to format amount: %v", err)
 				}
