@@ -28,10 +28,7 @@ func BenchmarkHumanizeMoneyFormatter(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		h := New(language.English)
-		_, err := h.Formatter("1234000000000000.56", "USD", FormatOptions{
-			Symbol:   "$",
-			Decimals: 2,
-		})
+		_, err := h.Formatter("1234000000000000.56", "USD", 2)
 		if err != nil {
 			b.Fatalf("Formatter returned error: %v", err)
 		}

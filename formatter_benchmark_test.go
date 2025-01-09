@@ -14,23 +14,25 @@ import (
 
 func BenchmarkHumanizeMoneyGenerated(b *testing.B) {
 	cases := []struct {
-		locale   language.Tag
-		value    string
-		currency string
-		opts     humanizemoney.FormatOptions
+		locale       language.Tag
+		value        string
+		currencyCode string
+		precision    int
 	}{
-		{language.English, "12345.6789", "USD", humanizemoney.FormatOptions{Symbol: "$", Decimals: 2}},
-		{language.French, "12345.6789", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimals: 2}},
-		{language.Ukrainian, "12345.6789", "UAH", humanizemoney.FormatOptions{Symbol: "₴", Decimals: 3}},
-		{language.German, "9876543.21", "EUR", humanizemoney.FormatOptions{Symbol: "€", Decimals: 2}},
-		{language.MustParse("bn-IN"), "12345678.9", "INR", humanizemoney.FormatOptions{Symbol: "₹", Decimals: 2}},
+		{language.English, "12345.6789", "USD", 2},
+		{language.French, "12345.6789", "EUR", 2},
+		{language.Ukrainian, "12345.6789", "UAH", 3},
+		{language.German, "9876543.21", "EUR", 2},
+		{language.MustParse("bn-IN"), "12345678.9", "INR", 2},
 	}
 
 	for _, c := range cases {
 		b.Run(c.locale.String(), func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
 				h := humanizemoney.New(c.locale)
-				_, err := h.Formatter(c.value, c.currency, c.opts)
+				h.NoGrouping = true
+				h.CurrencyDisplay = humanizemoney.DisplayNone
+				_, err := h.Formatter(c.value, c.currencyCode, c.precision)
 				if err != nil {
 					b.Fatalf("failed to format amount: %v", err)
 				}

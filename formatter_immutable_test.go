@@ -10,10 +10,9 @@ import (
 func TestFormatterImmutability_Simple(t *testing.T) {
 	originalValue := "1234.56"
 	valueCopy := originalValue
-	opts := FormatOptions{Symbol: "$", Decimals: 2}
 
 	h := New(language.English)
-	result, err := h.Formatter(originalValue, "USD", opts)
+	result, err := h.Formatter(originalValue, "USD", 2)
 	if err != nil {
 		t.Fatalf("Formatter returned error: %v", err)
 	}
@@ -31,7 +30,6 @@ func TestFormatterImmutability_Simple(t *testing.T) {
 func TestFormatterImmutability_Parallel(t *testing.T) {
 
 	originalValue := "9876543.21"
-	opts := FormatOptions{Symbol: "$", Decimals: 2}
 
 	var wg sync.WaitGroup
 	const goroutines = 50
@@ -43,7 +41,7 @@ func TestFormatterImmutability_Parallel(t *testing.T) {
 			defer wg.Done()
 
 			h := New(language.English)
-			res, err := h.Formatter(originalValue, "USD", opts)
+			res, err := h.Formatter(originalValue, "USD", 2)
 			if err != nil {
 				t.Errorf("Formatter returned error: %v", err)
 				return

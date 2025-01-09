@@ -8,11 +8,6 @@ import (
 	"golang.org/x/text/language"
 )
 
-type FormatOptions struct {
-	Symbol   string
-	Decimals int
-}
-
 type FailedParseAmount struct {
 	Value string
 	Err   error
@@ -30,8 +25,21 @@ func (e UnsupportedLocaleError) Error() string {
 	return fmt.Sprintf("unsupported locale: %v", e.Locale)
 }
 
+type Display uint8
+
+const (
+	// DisplaySymbol shows the currency symbol.
+	DisplaySymbol Display = iota
+	// DisplayCode shows the currency code.
+	DisplayCode
+	// DisplayNone shows nothing, hiding the currency.
+	DisplayNone
+)
+
 type Humanizer struct {
-	locale language.Tag
+	Locale          language.Tag
+	NoGrouping      bool
+	CurrencyDisplay Display
 }
 
 type NumberPattern struct {
@@ -45,33 +53,35 @@ type NumberPattern struct {
 
 func New(locale language.Tag) *Humanizer {
 	return &Humanizer{
-		locale: locale,
+		Locale:          locale,
+		NoGrouping:      0 != 0,
+		CurrencyDisplay: DisplaySymbol,
 	}
 }
 
-func (h *Humanizer) Formatter(value string, currencyCode string, opts FormatOptions) (string, error) {
+func (h *Humanizer) Formatter(value string, currencyCode string, precision int) (string, error) {
 	amount, err := money.ParseAmount(currencyCode, value)
 	if err != nil {
 		return "", FailedParseAmount{Value: value, Err: err}
 	}
 
-	if opts.Decimals > 0 {
-		amount = amount.Rescale(opts.Decimals)
+	if precision > 0 {
+		amount = amount.Rescale(precision)
 	} else {
 		amount = amount.RoundToCurr()
 	}
 
-	schema, ok := NumberSystemLatn[h.locale]
+	schema, ok := NumberSystemMap[h.Locale]
 	if !ok {
-		return "", UnsupportedLocaleError{Locale: h.locale}
+		return "", UnsupportedLocaleError{Locale: h.Locale}
 	}
 
 	pattern := parseNumberPattern(schema.Standard, schema.DecimalSep, schema.GroupSep)
 
 	numberStr := amount.Decimal().String()
-	formattedNumber := formatNumberWithPattern(numberStr, pattern)
+	formattedNumber := h.formatNumberWithPattern(numberStr, pattern)
 
-	result := assembleResultWithSymbol(formattedNumber, pattern, opts.Symbol)
+	result := h.assembleResultWithSymbol(formattedNumber, pattern, currencyCode)
 	return result, nil
 }
 
@@ -103,7 +113,7 @@ func parseNumberPattern(pattern, decimalSep, groupSep string) NumberPattern {
 	}
 }
 
-func formatNumberWithPattern(numStr string, np NumberPattern) string {
+func (h *Humanizer) formatNumberWithPattern(numStr string, np NumberPattern) string {
 	parts := strings.Split(numStr, ".")
 	intPart := parts[0]
 	var fracPart string
@@ -111,18 +121,39 @@ func formatNumberWithPattern(numStr string, np NumberPattern) string {
 		fracPart = parts[1]
 	}
 
-	groupedInt := applyGrouping(intPart, np.GroupSep, np.GroupSizes)
+	var groupedInt string
+	if !h.NoGrouping {
+		groupedInt = applyGrouping(intPart, np.GroupSep, np.GroupSizes)
+	} else {
+		groupedInt = intPart
+	}
+
 	if fracPart != "" {
 		return groupedInt + np.DecimalSep + fracPart
 	}
 	return groupedInt
 }
 
-func assembleResultWithSymbol(number string, np NumberPattern, symbol string) string {
-	if np.CurrencyAtStart {
-		return symbol + np.Prefix + number + np.Suffix
+func (h *Humanizer) assembleResultWithSymbol(number string, np NumberPattern, currencyCode string) string {
+	var currencyPart string
+	switch h.CurrencyDisplay {
+	case DisplaySymbol:
+		symbolVal, ok := SymbolMap[currencyCode]
+		if !ok {
+			symbolVal = currencyCode
+		}
+		currencyPart = symbolVal
+	case DisplayCode:
+		currencyPart = currencyCode
+	default:
+		return np.Prefix + number + np.Suffix
 	}
-	return np.Prefix + number + np.Suffix + symbol
+
+	if np.CurrencyAtStart {
+		return currencyPart + np.Prefix + number + np.Suffix
+	}
+
+	return np.Prefix + number + np.Suffix + currencyPart
 }
 
 func applyGrouping(intPart, groupSep string, groupSizes []int) string {

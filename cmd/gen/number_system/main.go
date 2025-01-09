@@ -1,4 +1,4 @@
-// go run dict.go > ../../dict.go
+// go run main.go > ../../../number_system.go
 
 package main
 
@@ -28,11 +28,11 @@ type cldrNumbers struct {
 			Territory string `json:"territory"`
 		} `json:"identity"`
 		Numbers struct {
-			SymbolsNumberSystemLatn struct {
+			SymbolsNumberSystemMap struct {
 				Decimal string `json:"decimal"`
 				Group   string `json:"group"`
 			} `json:"symbols-numberSystem-latn"`
-			CurrencyFormatsNumberSystemLatn struct {
+			CurrencyFormatsNumberSystemMap struct {
 				Standard string `json:"standard"`
 			} `json:"currencyFormats-numberSystem-latn"`
 		} `json:"numbers"`
@@ -72,9 +72,9 @@ func main() {
 		}
 
 		for locale, content := range data.Main {
-			standard := (content.Numbers.CurrencyFormatsNumberSystemLatn.Standard)
-			decimal := (content.Numbers.SymbolsNumberSystemLatn.Decimal)
-			group := (content.Numbers.SymbolsNumberSystemLatn.Group)
+			standard := (content.Numbers.CurrencyFormatsNumberSystemMap.Standard)
+			decimal := (content.Numbers.SymbolsNumberSystemMap.Decimal)
+			group := (content.Numbers.SymbolsNumberSystemMap.Group)
 
 			if standard == "" {
 				continue
@@ -155,7 +155,7 @@ func generateGoFile() {
 	fmt.Println("\tGroupSep    string")
 	fmt.Println("}")
 	fmt.Println()
-	fmt.Println("var NumberSystemLatn = map[language.Tag]NumberSystem{")
+	fmt.Println("var NumberSystemMap = map[language.Tag]NumberSystem{")
 
 	for _, loc := range locales {
 		ns := dict[loc]

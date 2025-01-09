@@ -20,11 +20,6 @@ func TestFormatter_Ultimate(t *testing.T) {
 		"100000000000",
 	}
 
-	opts := FormatOptions{
-		Symbol:   "$",
-		Decimals: 2,
-	}
-
 	var expectedResults = map[string]map[language.Tag]string{
 		"1000": {
 			language.Afrikaans:            "$1 000,00",
@@ -259,11 +254,11 @@ func TestFormatter_Ultimate(t *testing.T) {
 		},
 	}
 
-	for tag := range NumberSystemLatn {
+	for tag := range NumberSystemMap {
 		t.Run(fmt.Sprintf("Locale=%s", tag.String()), func(t *testing.T) {
 			for _, num := range numbers {
 				h := New(tag)
-				got, err := h.Formatter(num, "USD", opts)
+				got, err := h.Formatter(num, "USD", 2)
 				if err != nil {
 					t.Errorf("Formatter(%q, %s) error: %v", tag, num, err)
 					continue

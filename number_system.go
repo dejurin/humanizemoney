@@ -12,7 +12,7 @@ type NumberSystem struct {
 	GroupSep    string
 }
 
-var NumberSystemLatn = map[language.Tag]NumberSystem{
+var NumberSystemMap = map[language.Tag]NumberSystem{
 	// aa
 	language.MustParse("aa"): {
 		Standard: "¤\u00a0#,##0.00",
