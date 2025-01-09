@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+.DS_Store
+*.prof
+doc.txt
+YOU-MUST-READ-THIS-DOCUMENT.txt
