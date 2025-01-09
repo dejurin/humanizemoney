@@ -70,16 +70,22 @@ func parseNumberPattern(pattern, decimalSep, groupSep string) NumberPattern {
 	groupSizes := computeGroupSizes(numericCore)
 
 	currencyAtStart := false
+	var newPrefix, newSuffix string
 	if strings.Contains(prefix, "¤") {
 		currencyAtStart = true
-		prefix = strings.ReplaceAll(prefix, "¤", "")
+		newPrefix = strings.ReplaceAll(prefix, "¤", "")
+		newSuffix = suffix
 	} else if strings.Contains(suffix, "¤") {
-		suffix = strings.ReplaceAll(suffix, "¤", "")
+		newSuffix = strings.ReplaceAll(suffix, "¤", "")
+		newPrefix = prefix
+	} else {
+		newPrefix = prefix
+		newSuffix = suffix
 	}
 
 	return NumberPattern{
-		Prefix:          prefix,
-		Suffix:          suffix,
+		Prefix:          newPrefix,
+		Suffix:          newSuffix,
 		DecimalSep:      decimalSep,
 		GroupSep:        groupSep,
 		GroupSizes:      groupSizes,
@@ -95,12 +101,11 @@ func formatNumberWithPattern(numStr string, np NumberPattern) string {
 		fracPart = parts[1]
 	}
 
-	intPart = applyGrouping(intPart, np.GroupSep, np.GroupSizes)
-
+	groupedInt := applyGrouping(intPart, np.GroupSep, np.GroupSizes)
 	if fracPart != "" {
-		return intPart + np.DecimalSep + fracPart
+		return groupedInt + np.DecimalSep + fracPart
 	}
-	return intPart
+	return groupedInt
 }
 
 func assembleResultWithSymbol(number string, np NumberPattern, symbol string) string {
