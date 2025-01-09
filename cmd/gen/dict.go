@@ -43,6 +43,7 @@ type NumberSystem struct {
 	Standard string
 	Decimals string
 	Group    string
+	Name     string
 }
 
 var dict = map[string]NumberSystem{}
@@ -83,6 +84,7 @@ func main() {
 				Standard: standard,
 				Decimals: decimals,
 				Group:    group,
+				Name:     entry.Name,
 			}
 			_ = locale
 		}
@@ -158,6 +160,7 @@ func generateGoFile() {
 	for _, loc := range locales {
 		ns := dict[loc]
 		tagConst := mapToLangConst(loc)
+		fmt.Printf("//\t%s\n", ns.Name)
 		fmt.Printf("\t%s: {\n", tagConst)
 		fmt.Printf("\t\tStandard: %q,\n", ns.Standard)
 		fmt.Printf("\t\tDecimals:  %q,\n", ns.Decimals)
