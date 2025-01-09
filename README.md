@@ -106,3 +106,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+## Acknowledgements
+
+Special thanks to the creators of [`github.com/govalues/money`](https://github.com/govalues/money) for providing a robust foundation for this library.
+
