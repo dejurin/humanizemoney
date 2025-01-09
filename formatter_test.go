@@ -262,7 +262,8 @@ func TestFormatter_Ultimate(t *testing.T) {
 	for tag := range NumberSystemLatn {
 		t.Run(fmt.Sprintf("Locale=%s", tag.String()), func(t *testing.T) {
 			for _, num := range numbers {
-				got, err := Formatter(tag, num, "USD", opts)
+				h := New(tag)
+				got, err := h.Formatter(num, "USD", opts)
 				if err != nil {
 					t.Errorf("Formatter(%q, %s) error: %v", tag, num, err)
 					continue

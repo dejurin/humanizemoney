@@ -30,6 +30,10 @@ func (e UnsupportedLocaleError) Error() string {
 	return fmt.Sprintf("unsupported locale: %v", e.Locale)
 }
 
+type Humanizer struct {
+	locale language.Tag
+}
+
 type NumberPattern struct {
 	Prefix          string
 	Suffix          string
@@ -39,7 +43,13 @@ type NumberPattern struct {
 	CurrencyAtStart bool
 }
 
-func Formatter(locale language.Tag, value string, currencyCode string, opts FormatOptions) (string, error) {
+func New(locale language.Tag) *Humanizer {
+	return &Humanizer{
+		locale: locale,
+	}
+}
+
+func (h *Humanizer) Formatter(value string, currencyCode string, opts FormatOptions) (string, error) {
 	amount, err := money.ParseAmount(currencyCode, value)
 	if err != nil {
 		return "", FailedParseAmount{Value: value, Err: err}
@@ -51,9 +61,9 @@ func Formatter(locale language.Tag, value string, currencyCode string, opts Form
 		amount = amount.RoundToCurr()
 	}
 
-	schema, ok := NumberSystemLatn[locale]
+	schema, ok := NumberSystemLatn[h.locale]
 	if !ok {
-		return "", UnsupportedLocaleError{Locale: locale}
+		return "", UnsupportedLocaleError{Locale: h.locale}
 	}
 
 	pattern := parseNumberPattern(schema.Standard, schema.DecimalSep, schema.GroupSep)

@@ -12,7 +12,8 @@ func TestFormatterImmutability_Simple(t *testing.T) {
 	valueCopy := originalValue
 	opts := FormatOptions{Symbol: "$", Decimals: 2}
 
-	result, err := Formatter(language.English, originalValue, "USD", opts)
+	h := New(language.English)
+	result, err := h.Formatter(originalValue, "USD", opts)
 	if err != nil {
 		t.Fatalf("Formatter returned error: %v", err)
 	}
@@ -41,7 +42,8 @@ func TestFormatterImmutability_Parallel(t *testing.T) {
 		go func(idx int) {
 			defer wg.Done()
 
-			res, err := Formatter(language.English, originalValue, "USD", opts)
+			h := New(language.English)
+			res, err := h.Formatter(originalValue, "USD", opts)
 			if err != nil {
 				t.Errorf("Formatter returned error: %v", err)
 				return

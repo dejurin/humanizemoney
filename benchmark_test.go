@@ -24,14 +24,14 @@ func BenchmarkBojanzFormatter(b *testing.B) {
 }
 
 func BenchmarkHumanizeMoneyFormatter(b *testing.B) {
-	opts := FormatOptions{
-		Symbol:   "$",
-		Decimals: 2,
-	}
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_, err := Formatter(language.English, "1234000000000000.56", "USD", opts)
+		h := New(language.English)
+		_, err := h.Formatter("1234000000000000.56", "USD", FormatOptions{
+			Symbol:   "$",
+			Decimals: 2,
+		})
 		if err != nil {
 			b.Fatalf("Formatter returned error: %v", err)
 		}

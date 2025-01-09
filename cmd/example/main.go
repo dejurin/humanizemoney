@@ -10,10 +10,10 @@ import (
 
 func main() {
 	// Format amount for US locale
-	result, err := humanizemoney.Formatter(
-		language.English, // locale
-		"1234567.8912",   // amount
-		"USD",            // currency code
+	h := humanizemoney.New(language.English)
+	result, err := h.Formatter(
+		"1234567.8912", // amount
+		"USD",          // currency code
 		humanizemoney.FormatOptions{
 			Symbol:   "$", // currency symbol
 			Decimals: 2,   // decimal places
@@ -25,8 +25,8 @@ func main() {
 	fmt.Println(result) // Output: $1,234,567.89
 
 	// Format amount for German locale
-	result, err = humanizemoney.Formatter(
-		language.German,
+	h = humanizemoney.New(language.German)
+	result, err = h.Formatter(
 		"1234567.8912",
 		"EUR",
 		humanizemoney.FormatOptions{
@@ -40,8 +40,8 @@ func main() {
 	fmt.Println(result) // Output: 1.234.567,89 €
 
 	// Format amount for Ukrainian locale
-	result, err = humanizemoney.Formatter(
-		language.MustParse("uk"),
+	h = humanizemoney.New(language.MustParse("uk"))
+	result, err = h.Formatter(
 		"1234567.8912",
 		"UAH",
 		humanizemoney.FormatOptions{
@@ -55,8 +55,8 @@ func main() {
 	fmt.Println(result) // Output: 1 234 567,891 ₴
 
 	// Format amount for Indian locale
-	result, err = humanizemoney.Formatter(
-		language.MustParse("bn-IN"),
+	h = humanizemoney.New(language.MustParse("bn-IN"))
+	result, err = h.Formatter(
 		"12345678.9",
 		"INR",
 		humanizemoney.FormatOptions{
