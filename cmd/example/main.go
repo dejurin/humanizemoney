@@ -86,5 +86,5 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(result) // Output: 123,456,789.99 E£
+	fmt.Println(result) // Output: -123,456,789.99 E£
 }
