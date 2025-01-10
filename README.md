@@ -133,6 +133,8 @@ Below are the benchmark results performed on an **Apple M3 Max** (`darwin/arm64`
 - **allocs/op** — memory allocations per operation.
 - **Improvement columns** compare against `BenchmarkBojanzFormatter-16` (baseline).
 
+## Errors
+
 The package provides two types of errors:
 
 - `UnsupportedLocaleError`: Returned when the specified locale is not supported
