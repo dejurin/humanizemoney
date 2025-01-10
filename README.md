@@ -153,7 +153,7 @@ func main() {
 
 ## Benchmark
 
-Below are the benchmark results performed on an **Apple M3 Max** (`darwin/arm64`) for the [github.com/dejurin/humanizemoney](https://github.com/dejurin/humanizemoney) package. The table includes a column showing the percentage difference relative to `BenchmarkBojanzFormatter-16` as a positive improvement. The **`-16`** suffix in the benchmark name indicates that the test was run with **GOMAXPROCS = 16** (or on a system with 16 logical CPUs).
+Below are the benchmark results performed on an **Apple M3 Max** (`darwin/arm64`) for the [github.com/dejurin/humanizemoney](https://github.com/dejurin/humanizemoney) package. The table includes a column showing the percentage difference relative to `BenchmarkBojanzFormatter-16` [https://github.com/bojanz/currency](https://github.com/bojanz/currency) as a positive improvement. The **`-16`** suffix in the benchmark name indicates that the test was run with **GOMAXPROCS = 16** (or on a system with 16 logical CPUs).
 
 | Benchmark                              | Iterations | ns/op  | ns/op Improvement | B/op  | B/op Improvement | allocs/op | allocs/op Improvement |
 |----------------------------------------|-----------:|-------:|------------------:|------:|-----------------:|----------:|----------------------:|
