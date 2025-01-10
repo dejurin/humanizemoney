@@ -7,7 +7,7 @@ import (
 	"golang.org/x/text/language"
 )
 
-func TestFormatter_Ultimate(t *testing.T) {
+func TestFormatter_All(t *testing.T) {
 	numbers := []string{
 		"1000",
 		"10000",
@@ -285,4 +285,47 @@ func TestFormatter_Ultimate(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestFormatter_Minus(t *testing.T) {
+	numbers := []string{
+		"-100000000000",
+	}
+
+	var expectedResults = map[string]map[language.Tag]string{
+
+		"-100000000000": {
+			language.Hebrew: "\u200f-100,000,000,000.00\u00a0\u200f$",
+		},
+	}
+
+	t.Run(fmt.Sprintf("Locale=%s", language.Hebrew.String()), func(t *testing.T) {
+		for _, num := range numbers {
+			h := New(language.Hebrew)
+			got, err := h.Formatter(num, "USD", 2)
+			if err != nil {
+				t.Errorf("Formatter(%q, %s) error: %v", language.Hebrew, num, err)
+				continue
+			}
+
+			wantMap, hasNumber := expectedResults[num]
+			if !hasNumber {
+				t.Logf("[INFO] no 'want' entry for number=%q. Got=%q", num, got)
+				continue
+			}
+
+			want, hasLocale := wantMap[language.Hebrew]
+			if !hasLocale {
+				t.Logf("[INFO] no 'want' entry for locale=%q, number=%q. Got=%q", language.Hebrew, num, got)
+				continue
+			}
+
+			if got != want {
+				t.Errorf("Mismatch for locale=%q, number=%s:\n  got:  %q\n  want: %q",
+					language.Hebrew, num, got, want)
+			} else {
+				t.Logf("OK  locale=%q number=%s => %q", language.Hebrew, num, got)
+			}
+		}
+	})
 }

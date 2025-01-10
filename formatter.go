@@ -76,17 +76,64 @@ func (h *Humanizer) Formatter(value string, currencyCode string, precision int) 
 		return "", UnsupportedLocaleError{Locale: h.Locale}
 	}
 
-	pattern := parseNumberPattern(schema.Standard, schema.DecimalSep, schema.GroupSep)
+	pattern := parsePattern(schema.Standard, schema.DecimalSep, schema.GroupSep)
 
-	numberStr := amount.Decimal().String()
-	formattedNumber := h.formatNumberWithPattern(numberStr, pattern)
+	formattedNumber := h.formatNumber(amount, pattern)
 
-	result := h.assembleResultWithSymbol(formattedNumber, pattern, currencyCode)
+	result := h.assembleSymbol(formattedNumber, pattern, currencyCode, amount.IsNeg())
 	return result, nil
 }
 
-func parseNumberPattern(pattern, decimalSep, groupSep string) NumberPattern {
-	prefix, numericCore, suffix := splitPatternByNumeric(pattern)
+func (h *Humanizer) formatNumber(amount money.Amount, np NumberPattern) string {
+	whole, frac := extractNumber(amount)
+
+	if amount.IsNeg() {
+		whole = whole[1:]
+	}
+
+	var groupedInt string
+	if !h.NoGrouping {
+		groupedInt = applyGrouping(whole, np.GroupSep, np.GroupSizes)
+	} else {
+		groupedInt = whole
+	}
+
+	if frac != "" {
+		return groupedInt + np.DecimalSep + frac
+	}
+
+	return groupedInt
+}
+
+func (h *Humanizer) assembleSymbol(number string, np NumberPattern, currencyCode string, neg bool) string {
+	negSign := ""
+	if neg {
+		negSign = "-"
+	}
+	var currencyPart string
+	switch h.CurrencyDisplay {
+	case DisplaySymbol:
+		symbolVal, ok := SymbolMap[currencyCode]
+		if !ok {
+			symbolVal = currencyCode
+		}
+		currencyPart = symbolVal
+	case DisplayCode:
+		currencyPart = currencyCode
+	default:
+		return np.Prefix + negSign + number + np.Suffix
+	}
+
+	if np.CurrencyAtStart {
+		// @todo
+		return negSign + currencyPart + np.Prefix + number + np.Suffix
+	}
+
+	return np.Prefix + negSign + number + np.Suffix + currencyPart
+}
+
+func parsePattern(pattern, decimalSep, groupSep string) NumberPattern {
+	prefix, numericCore, suffix := splitPattern(pattern)
 	groupSizes := computeGroupSizes(numericCore)
 
 	currencyAtStart := false
@@ -113,49 +160,6 @@ func parseNumberPattern(pattern, decimalSep, groupSep string) NumberPattern {
 	}
 }
 
-func (h *Humanizer) formatNumberWithPattern(numStr string, np NumberPattern) string {
-	parts := strings.Split(numStr, ".")
-	intPart := parts[0]
-	var fracPart string
-	if len(parts) > 1 {
-		fracPart = parts[1]
-	}
-
-	var groupedInt string
-	if !h.NoGrouping {
-		groupedInt = applyGrouping(intPart, np.GroupSep, np.GroupSizes)
-	} else {
-		groupedInt = intPart
-	}
-
-	if fracPart != "" {
-		return groupedInt + np.DecimalSep + fracPart
-	}
-	return groupedInt
-}
-
-func (h *Humanizer) assembleResultWithSymbol(number string, np NumberPattern, currencyCode string) string {
-	var currencyPart string
-	switch h.CurrencyDisplay {
-	case DisplaySymbol:
-		symbolVal, ok := SymbolMap[currencyCode]
-		if !ok {
-			symbolVal = currencyCode
-		}
-		currencyPart = symbolVal
-	case DisplayCode:
-		currencyPart = currencyCode
-	default:
-		return np.Prefix + number + np.Suffix
-	}
-
-	if np.CurrencyAtStart {
-		return currencyPart + np.Prefix + number + np.Suffix
-	}
-
-	return np.Prefix + number + np.Suffix + currencyPart
-}
-
 func applyGrouping(intPart, groupSep string, groupSizes []int) string {
 	pos := len(intPart)
 	var segments []string
@@ -179,7 +183,19 @@ func applyGrouping(intPart, groupSep string, groupSizes []int) string {
 	return strings.Join(segments, groupSep)
 }
 
-func splitPatternByNumeric(pattern string) (prefix, numericCore, suffix string) {
+func extractNumber(value money.Amount) (string, string) {
+	scale := value.Scale()
+
+	whole, frac, _ := value.Int64(scale)
+
+	if frac < 0 {
+		frac = -frac
+	}
+
+	return fmt.Sprintf("%d", whole), fmt.Sprintf("%0*d", scale, frac)
+}
+
+func splitPattern(pattern string) (prefix, numericCore, suffix string) {
 	runes := []rune(pattern)
 
 	firstNumeric := -1
