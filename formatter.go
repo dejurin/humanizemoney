@@ -58,7 +58,7 @@ type NumberPattern struct {
 func New(locale language.Tag) *Humanizer {
 	return &Humanizer{
 		Locale:          locale,
-		NoGrouping:      0 != 0,
+		NoGrouping:      false,
 		CurrencyDisplay: DisplaySymbol,
 	}
 }
@@ -75,6 +75,10 @@ func (h *Humanizer) Formatter(value string, currencyCode string, precision int) 
 		return "", FailedParseAmount{Value: value, Err: err}
 	}
 
+	return h.FormatAmount(amount, currencyCode, precision)
+}
+
+func (h *Humanizer) FormatAmount(amount money.Amount, currencyCode string, precision int) (string, error) {
 	if precision > 0 {
 		amount = amount.Rescale(precision)
 	} else {
