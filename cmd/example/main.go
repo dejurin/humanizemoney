@@ -12,6 +12,7 @@ func main() {
 	formats := []struct {
 		Lang            language.Tag
 		NoGrouping      bool
+		TrimZeros       bool
 		CurrencyDisplay humanizemoney.Display
 		Amount          string
 		Currency        string
@@ -21,6 +22,7 @@ func main() {
 		{
 			Lang:            language.English,
 			NoGrouping:      true,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplayNone,
 			Amount:          "1234567.8912",
 			Currency:        "USD",
@@ -30,6 +32,7 @@ func main() {
 		{
 			Lang:            language.German,
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplayCode,
 			Amount:          "1234567.8912",
 			Currency:        "EUR",
@@ -39,6 +42,7 @@ func main() {
 		{
 			Lang:            language.MustParse("uk"),
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol,
 			Amount:          "1234567.8912",
 			Currency:        "UAH",
@@ -48,6 +52,7 @@ func main() {
 		{
 			Lang:            language.MustParse("bn-IN"),
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol,
 			Amount:          "12345678.9",
 			Currency:        "INR",
@@ -57,6 +62,7 @@ func main() {
 		{
 			Lang:            language.MustParse("gsw"),
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol,
 			Amount:          "12345678.9",
 			Currency:        "CHF",
@@ -66,6 +72,7 @@ func main() {
 		{
 			Lang:            language.Arabic,
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol,
 			Amount:          "-123456789.99",
 			Currency:        "EGP",
@@ -75,6 +82,7 @@ func main() {
 		{
 			Lang:            language.Hebrew,
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol,
 			Amount:          "-123456789.99",
 			Currency:        "ILS",
@@ -84,8 +92,9 @@ func main() {
 		{
 			Lang:            language.MustParse("gsw"), // Swiss
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol,
-			Amount:          "-123456789.99",
+			Amount:          "-123456789.00",
 			Currency:        "CHF",
 			Decimals:        2,
 		},
@@ -93,8 +102,9 @@ func main() {
 		{
 			Lang:            language.English,
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplayNone,
-			Amount:          "1000",
+			Amount:          "1000.1",
 			Currency:        "BTC",
 			Decimals:        2,
 		},
@@ -102,16 +112,38 @@ func main() {
 		{
 			Lang:            language.English,
 			NoGrouping:      false,
+			TrimZeros:       false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol, // Do not use DisplaySymbol | DisplayCode, since we are using custom currency, you can only use DisplayNone.
 			Amount:          "1000",
 			Currency:        "₿",
 			Decimals:        0,
+		},
+		// ₿1,000.0
+		{
+			Lang:            language.English,
+			NoGrouping:      false,
+			TrimZeros:       true,
+			CurrencyDisplay: humanizemoney.DisplaySymbol, // Do not use DisplaySymbol | DisplayCode, since we are using custom currency, you can only use DisplayNone.
+			Amount:          "1000",
+			Currency:        "JPY",
+			Decimals:        -1,
+		},
+		// ₿1,000.0
+		{
+			Lang:            language.English,
+			NoGrouping:      false,
+			TrimZeros:       false,
+			CurrencyDisplay: humanizemoney.DisplaySymbol, // Do not use DisplaySymbol | DisplayCode, since we are using custom currency, you can only use DisplayNone.
+			Amount:          "1000.123",
+			Currency:        "OMR",
+			Decimals:        1,
 		},
 	}
 
 	for _, f := range formats {
 		h := humanizemoney.New(f.Lang)
 		h.NoGrouping = f.NoGrouping
+		h.TrimZeros = f.TrimZeros
 		h.CurrencyDisplay = f.CurrencyDisplay
 
 		result, err := h.Formatter(f.Amount, f.Currency, f.Decimals)

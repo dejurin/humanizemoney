@@ -8,6 +8,7 @@ A Go package for formatting monetary amounts with proper localization support. I
 - Support for different currency symbols and positions
 - Proper decimal and grouping separators based on locale
 - Configurable decimal precision
+- Optional trimming of trailing zeros
 - Based on official [Unicode CLDR](https://github.com/unicode-org/cldr-json/) data
 
 ## Note
@@ -36,118 +37,21 @@ import (
 )
 
 func main() {
-	formats := []struct {
-		Lang            language.Tag
-		NoGrouping      bool
-		CurrencyDisplay humanizemoney.Display
-		Amount          string
-		Currency        string
-		Decimals        int
-	}{
-		// 1234567.89
-		{
-			Lang:            language.English,
-			NoGrouping:      true,
-			CurrencyDisplay: humanizemoney.DisplayNone,
-			Amount:          "1234567.8912",
-			Currency:        "USD",
-			Decimals:        2,
-		},
-		// 1.234.567,89 EUR
-		{
-			Lang:            language.German,
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplayCode,
-			Amount:          "1234567.8912",
-			Currency:        "EUR",
-			Decimals:        2,
-		},
-		// 1 234 567,891 ₴
-		{
-			Lang:            language.MustParse("uk"),
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplaySymbol,
-			Amount:          "1234567.8912",
-			Currency:        "UAH",
-			Decimals:        3,
-		},
-		// ₹1,23,45,678.90
-		{
-			Lang:            language.MustParse("bn-IN"),
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplaySymbol,
-			Amount:          "12345678.9",
-			Currency:        "INR",
-			Decimals:        2,
-		},
-		// 12’345’678.90 CHF
-		{
-			Lang:            language.MustParse("gsw"),
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplaySymbol,
-			Amount:          "12345678.9",
-			Currency:        "CHF",
-			Decimals:        2,
-		},
-		// -123,456,789.99 E£
-		{
-			Lang:            language.Arabic,
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplaySymbol,
-			Amount:          "-123456789.99",
-			Currency:        "EGP",
-			Decimals:        2,
-		},
-		// -123,456,789.99 ‏₪
-		{
-			Lang:            language.Hebrew,
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplaySymbol,
-			Amount:          "-123456789.99",
-			Currency:        "ILS",
-			Decimals:        2,
-		},
-		// 12’345’678.90 CHF
-		{
-			Lang:            language.MustParse("gsw"), // Swiss
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplaySymbol,
-			Amount:          "-123456789.99",
-			Currency:        "CHF",
-			Decimals:        2,
-		},
-		// 1,000.00
-		{
-			Lang:            language.English,
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplayNone,
-			Amount:          "1000",
-			Currency:        "BTC",
-			Decimals:        2,
-		},
-		// ₿1,000.0
-		{
-			Lang:            language.English,
-			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplaySymbol, // Do not use DisplaySymbol | DisplayCode, since we are using custom currency, you can only use DisplayNone.
-			Amount:          "1000",
-			Currency:        "₿",
-			Decimals:        0,
-		},
+
+	h := humanizemoney.New(language.English)      // Use English locale
+	h.CurrencyDisplay = humanizemoney.DisplayCode // Show currency code
+	h.NoGrouping = true                           // Remove grouping
+	h.TrimZeros = true                            // Remove trailing zeros (Trim returns an amount with trailing zeros removed up to the given scale.)
+
+	amount := "9999.4900"
+
+	result, err := h.Formatter(amount, "USD", 3) // Format amount to USD with 3 decimal places
+
+	if err != nil {
+		panic(err)
 	}
 
-	for _, f := range formats {
-		h := humanizemoney.New(f.Lang)
-		h.NoGrouping = f.NoGrouping
-		h.CurrencyDisplay = f.CurrencyDisplay
-
-		result, err := h.Formatter(f.Amount, f.Currency, f.Decimals)
-		if err != nil {
-			panic(err)
-		}
-
-		fmt.Println(result)
-	}
+	fmt.Println(result)
 }
 ```
 
@@ -186,4 +90,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Acknowledgements
 
 Special thanks to the creators of [`github.com/govalues/money`](https://github.com/govalues/money) for providing a robust foundation for this library.
-

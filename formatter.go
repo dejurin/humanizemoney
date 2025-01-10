@@ -2,6 +2,9 @@
 // Github: https://github.com/dejurin/humanizemoney
 // MIT License.
 
+// Package humanizemoney provides functionality for formatting monetary values according to locale-specific rules.
+// It supports various currency display options, grouping separators, and decimal formatting.
+
 package humanizemoney
 
 import (
@@ -12,49 +15,72 @@ import (
 	"golang.org/x/text/language"
 )
 
+// FailedParseAmount represents an error that occurs when parsing a monetary amount fails.
 type FailedParseAmount struct {
+	// The original value that failed to parse
 	Value string
-	Err   error
+	// The underlying error
+	Err error
 }
 
+// Error returns a string representation of the error.
 func (e FailedParseAmount) Error() string {
 	return fmt.Sprintf("failed to parse amount %q: %v", e.Value, e.Err)
 }
 
+// UnsupportedLocaleError represents an error that occurs when a locale is not supported.
 type UnsupportedLocaleError struct {
+	// The locale that is not supported
 	Locale language.Tag
 }
 
+// Error returns a string representation of the error.
 func (e UnsupportedLocaleError) Error() string {
 	return fmt.Sprintf("unsupported locale: %v", e.Locale)
 }
 
+// Display represents how the currency should be shown in the formatted output.
 type Display uint8
 
+// Constants for Display
 const (
-	// DisplaySymbol shows the currency symbol.
+	// DisplaySymbol shows the currency symbol (e.g., "$" for USD).
 	DisplaySymbol Display = iota
-	// DisplayCode shows the currency code.
+	// DisplayCode shows the currency code (e.g., "USD").
 	DisplayCode
-	// DisplayNone shows nothing, hiding the currency.
+	// DisplayNone shows no currency indicator.
 	DisplayNone
 )
 
-type Humanizer struct {
-	Locale          language.Tag
-	NoGrouping      bool
-	CurrencyDisplay Display
-}
-
+// NumberPattern holds the formatting pattern for numbers in a specific locale.
 type NumberPattern struct {
-	Prefix          string
-	Suffix          string
-	DecimalSep      string
-	GroupSep        string
-	GroupSizes      []int
+	// Prefix is the string that comes before the number
+	Prefix string
+	// Suffix is the string that comes after the number
+	Suffix string
+	// DecimalSep is the decimal separator character
+	DecimalSep string
+	// GroupSep is the grouping separator character
+	GroupSep string
+	// GroupSizes defines the sizes of digit groups
+	GroupSizes []int
+	// CurrencyAtStart indicates if the currency symbol should appear before the number
 	CurrencyAtStart bool
 }
 
+// Humanizer contains configuration for formatting monetary values.
+type Humanizer struct {
+	// Locale specifies the language and region for formatting rules
+	Locale language.Tag
+	// NoGrouping disables digit grouping when true (e.g., 1000 vs 1,000)
+	NoGrouping bool
+	// TrimZeros removes trailing zeros in decimal places when true
+	TrimZeros bool
+	// CurrencyDisplay determines how the currency is displayed
+	CurrencyDisplay Display
+}
+
+// New creates a new Humanizer with the specified locale and default settings.
 func New(locale language.Tag) *Humanizer {
 	return &Humanizer{
 		Locale:          locale,
@@ -63,6 +89,9 @@ func New(locale language.Tag) *Humanizer {
 	}
 }
 
+// Formatter formats a string representation of a monetary value according to locale rules.
+// It takes a value string, currency code, and precision for decimal places.
+// Returns the formatted string and any error that occurred.
 func (h *Humanizer) Formatter(value string, currencyCode string, precision int) (string, error) {
 	_, err := money.ParseCurr(currencyCode)
 	var passCurrencyCode = currencyCode
@@ -78,11 +107,14 @@ func (h *Humanizer) Formatter(value string, currencyCode string, precision int) 
 	return h.FormatAmount(amount, currencyCode, precision)
 }
 
+// FormatAmount formats a money.Amount value according to locale rules.
+// It takes an Amount object, currency code, and precision for decimal places.
+// Returns the formatted string and any error that occurred.
 func (h *Humanizer) FormatAmount(amount money.Amount, currencyCode string, precision int) (string, error) {
-	if precision > 0 {
-		amount = amount.Rescale(precision)
-	} else {
+	if precision < 0 {
 		amount = amount.RoundToCurr()
+	} else {
+		amount = amount.Round(precision)
 	}
 
 	schema, ok := NumberSystemMap[h.Locale]
@@ -98,27 +130,30 @@ func (h *Humanizer) FormatAmount(amount money.Amount, currencyCode string, preci
 	return result, nil
 }
 
+// formatNumber formats a monetary amount according to the provided NumberPattern.
 func (h *Humanizer) formatNumber(amount money.Amount, np NumberPattern) string {
+	var groupedInt string
+
 	whole, frac := extractNumber(amount)
 
 	if amount.IsNeg() {
 		whole = whole[1:]
 	}
 
-	var groupedInt string
 	if !h.NoGrouping {
 		groupedInt = applyGrouping(whole, np.GroupSep, np.GroupSizes)
 	} else {
 		groupedInt = whole
 	}
 
-	if frac != "" {
-		return groupedInt + np.DecimalSep + frac
+	if amount.IsInt() && h.TrimZeros {
+		return groupedInt
 	}
 
-	return groupedInt
+	return groupedInt + np.DecimalSep + frac
 }
 
+// assembleSymbol assembles the formatted string with the currency symbol.
 func (h *Humanizer) assembleSymbol(number string, np NumberPattern, currencyCode string, neg bool) string {
 	negSign := ""
 	if neg {
@@ -133,19 +168,19 @@ func (h *Humanizer) assembleSymbol(number string, np NumberPattern, currencyCode
 		}
 		currencyPart = symbolVal
 	case DisplayCode:
-		currencyPart = currencyCode
+		currencyPart = currencyCode + "\u202f"
 	default:
 		return np.Prefix + negSign + number + np.Suffix
 	}
 
 	if np.CurrencyAtStart {
-		// @todo
 		return negSign + currencyPart + np.Prefix + number + np.Suffix
 	}
 
 	return np.Prefix + negSign + number + np.Suffix + currencyPart
 }
 
+// parsePattern parses a number pattern string into a NumberPattern object.
 func parsePattern(pattern, decimalSep, groupSep string) NumberPattern {
 	prefix, numericCore, suffix := splitPattern(pattern)
 	groupSizes := computeGroupSizes(numericCore)
@@ -174,6 +209,7 @@ func parsePattern(pattern, decimalSep, groupSep string) NumberPattern {
 	}
 }
 
+// applyGrouping applies digit grouping to a string according to the provided NumberPattern.
 func applyGrouping(intPart, groupSep string, groupSizes []int) string {
 	pos := len(intPart)
 	var segments []string
@@ -197,6 +233,7 @@ func applyGrouping(intPart, groupSep string, groupSizes []int) string {
 	return strings.Join(segments, groupSep)
 }
 
+// extractNumber extracts the whole and fractional parts of a monetary amount.
 func extractNumber(value money.Amount) (string, string) {
 	scale := value.Scale()
 
@@ -209,6 +246,7 @@ func extractNumber(value money.Amount) (string, string) {
 	return fmt.Sprintf("%d", whole), fmt.Sprintf("%0*d", scale, frac)
 }
 
+// splitPattern splits a number pattern string into prefix, numeric core, and suffix parts.
 func splitPattern(pattern string) (prefix, numericCore, suffix string) {
 	runes := []rune(pattern)
 
@@ -237,6 +275,7 @@ func splitPattern(pattern string) (prefix, numericCore, suffix string) {
 	return
 }
 
+// computeGroupSizes computes the sizes of digit groups from a numeric core string.
 func computeGroupSizes(numericCore string) []int {
 	if dotPos := strings.Index(numericCore, "."); dotPos != -1 {
 		numericCore = numericCore[:dotPos]
@@ -274,6 +313,7 @@ func computeGroupSizes(numericCore string) []int {
 	return groupSizes
 }
 
+// groupSizesAt returns the size of a digit group at a specific index.
 func groupSizesAt(gs []int, i int) int {
 	if i < len(gs) {
 		return gs[i]
