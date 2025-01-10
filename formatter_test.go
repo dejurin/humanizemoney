@@ -7,7 +7,7 @@ import (
 	"golang.org/x/text/language"
 )
 
-func TestFormatter_All(t *testing.T) {
+func TestFormatter(t *testing.T) {
 	numbers := []string{
 		"1000",
 		"10000",
@@ -287,45 +287,49 @@ func TestFormatter_All(t *testing.T) {
 	}
 }
 
-func TestFormatter_Minus(t *testing.T) {
+func TestFormatter_Negative(t *testing.T) {
 	numbers := []string{
-		"-100000000000",
+		"-1000000",
 	}
 
 	var expectedResults = map[string]map[language.Tag]string{
-
-		"-100000000000": {
-			language.Hebrew: "\u200f-100,000,000,000.00\u00a0\u200f$",
+		"-1000000": {
+			language.Hebrew:           "\u200f-1,000,000.00\u00a0\u200f$",
+			language.Arabic:           "\u200f-1,000,000.00\u00a0$",
+			language.Ukrainian:        "-1\u00a0000\u00a0000,00\u00a0$",
+			language.MustParse("gsw"): "-1’000’000.00\u00a0$",
 		},
 	}
 
-	t.Run(fmt.Sprintf("Locale=%s", language.Hebrew.String()), func(t *testing.T) {
-		for _, num := range numbers {
-			h := New(language.Hebrew)
-			got, err := h.Formatter(num, "USD", 2)
-			if err != nil {
-				t.Errorf("Formatter(%q, %s) error: %v", language.Hebrew, num, err)
-				continue
-			}
+	for tag := range NumberSystemMap {
+		t.Run(fmt.Sprintf("Locale=%s", tag.String()), func(t *testing.T) {
+			for _, num := range numbers {
+				h := New(tag)
+				got, err := h.Formatter(num, "USD", 2)
+				if err != nil {
+					t.Errorf("Formatter(%q, %s) error: %v", tag, num, err)
+					continue
+				}
 
-			wantMap, hasNumber := expectedResults[num]
-			if !hasNumber {
-				t.Logf("[INFO] no 'want' entry for number=%q. Got=%q", num, got)
-				continue
-			}
+				wantMap, hasNumber := expectedResults[num]
+				if !hasNumber {
+					t.Logf("[INFO] no 'want' entry for number=%q. Got=%q", num, got)
+					continue
+				}
 
-			want, hasLocale := wantMap[language.Hebrew]
-			if !hasLocale {
-				t.Logf("[INFO] no 'want' entry for locale=%q, number=%q. Got=%q", language.Hebrew, num, got)
-				continue
-			}
+				want, hasLocale := wantMap[tag]
+				if !hasLocale {
+					t.Logf("[INFO] no 'want' entry for locale=%q, number=%q. Got=%q", tag, num, got)
+					continue
+				}
 
-			if got != want {
-				t.Errorf("Mismatch for locale=%q, number=%s:\n  got:  %q\n  want: %q",
-					language.Hebrew, num, got, want)
-			} else {
-				t.Logf("OK  locale=%q number=%s => %q", language.Hebrew, num, got)
+				if got != want {
+					t.Errorf("Mismatch for locale=%q, number=%s:\n  got:  %q\n  want: %q",
+						tag, num, got, want)
+				} else {
+					t.Logf("OK  locale=%q number=%s => %q", tag, num, got)
+				}
 			}
-		}
-	})
+		})
+	}
 }

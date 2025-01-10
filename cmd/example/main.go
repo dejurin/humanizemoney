@@ -71,6 +71,24 @@ func main() {
 			Currency:        "EGP",
 			Decimals:        2,
 		},
+		// -123,456,789.99 ‏₪
+		{
+			Lang:            language.Hebrew,
+			NoGrouping:      false,
+			CurrencyDisplay: humanizemoney.DisplaySymbol,
+			Amount:          "-123456789.99",
+			Currency:        "ILS",
+			Decimals:        2,
+		},
+		// 12’345’678.90 CHF
+		{
+			Lang:            language.MustParse("gsw"), // Swiss
+			NoGrouping:      false,
+			CurrencyDisplay: humanizemoney.DisplaySymbol,
+			Amount:          "-123456789.99",
+			Currency:        "CHF",
+			Decimals:        2,
+		},
 		// 1,000.00
 		{
 			Lang:            language.English,
