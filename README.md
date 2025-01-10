@@ -1,6 +1,6 @@
 # humanizemoney
 
-A Go package for formatting monetary amounts with proper localization support. It uses the Unicode CLDR (Common Locale Data Repository) to ensure accurate number formatting across different locales and currencies.
+A Go package for formatting monetary amounts with proper localization support. It uses the Unicode CLDR (Common Locale Data Repository) to ensure accurate number formatting across different locales and currencies. Based on [https://github.com/govalues/money](https://github.com/govalues/money).
 
 ## Features
 

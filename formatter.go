@@ -1,3 +1,7 @@
+// Copyright (c) 2025 YURII DE.
+// Github: https://github.com/dejurin/humanizemoney
+// MIT License.
+
 package humanizemoney
 
 import (
