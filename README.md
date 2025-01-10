@@ -44,6 +44,7 @@ func main() {
 		Currency        string
 		Decimals        int
 	}{
+		// 1234567.89
 		{
 			Lang:            language.English,
 			NoGrouping:      true,
@@ -52,6 +53,7 @@ func main() {
 			Currency:        "USD",
 			Decimals:        2,
 		},
+		// 1.234.567,89 EUR
 		{
 			Lang:            language.German,
 			NoGrouping:      false,
@@ -60,6 +62,7 @@ func main() {
 			Currency:        "EUR",
 			Decimals:        2,
 		},
+		// 1 234 567,891 ₴
 		{
 			Lang:            language.MustParse("uk"),
 			NoGrouping:      false,
@@ -68,6 +71,7 @@ func main() {
 			Currency:        "UAH",
 			Decimals:        3,
 		},
+		// ₹1,23,45,678.90
 		{
 			Lang:            language.MustParse("bn-IN"),
 			NoGrouping:      false,
@@ -76,6 +80,7 @@ func main() {
 			Currency:        "INR",
 			Decimals:        2,
 		},
+		// 12’345’678.90 CHF
 		{
 			Lang:            language.MustParse("gsw"),
 			NoGrouping:      false,
@@ -84,6 +89,7 @@ func main() {
 			Currency:        "CHF",
 			Decimals:        2,
 		},
+		// -123,456,789.99 E£
 		{
 			Lang:            language.Arabic,
 			NoGrouping:      false,
@@ -92,6 +98,7 @@ func main() {
 			Currency:        "EGP",
 			Decimals:        2,
 		},
+		// 1,000.00
 		{
 			Lang:            language.English,
 			NoGrouping:      false,
@@ -100,11 +107,12 @@ func main() {
 			Currency:        "BTC",
 			Decimals:        2,
 		},
+		// ₿1,000.0
 		{
 			Lang:            language.English,
 			NoGrouping:      false,
 			CurrencyDisplay: humanizemoney.DisplaySymbol, // Do not use DisplaySymbol | DisplayCode, since we are using custom currency, you can only use DisplayNone.
-			Amount:          "-1000",
+			Amount:          "1000",
 			Currency:        "₿",
 			Decimals:        0,
 		},
