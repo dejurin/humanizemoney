@@ -1,7 +1,3 @@
-github.com/bojanz/currency v1.3.0 h1:HlgIxAaD7xMCk1RtjR5b7UKG3d5BBTPZORSPAWefhro=
-github.com/bojanz/currency v1.3.0/go.mod h1:jNoZiJyRTqoU5DFoa+n+9lputxPUDa8Fz8BdDrW06Go=
-github.com/cockroachdb/apd/v3 v3.2.1 h1:U+8j7t0axsIgvQUqthuNm82HIrYXodOV2iWLWtEaIwg=
-github.com/cockroachdb/apd/v3 v3.2.1/go.mod h1:klXJcjp+FffLTHlhIG69tezTDvdP065naDsHzKhYSqc=
 github.com/govalues/decimal v0.1.29 h1:GKC5g9y9oWxKIy51czdHTShOABwHm/shVuOVPwG415M=
 github.com/govalues/decimal v0.1.29/go.mod h1:LUlHHucpCmA4rJfNrDvMgrWibDpYnDNWqJuNU1/gxW8=
 github.com/govalues/money v0.2.3 h1:mj4pu+kSOREWdf+ilRB7ShY9qsv7N4hAgA4GgV2KmBQ=
