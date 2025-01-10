@@ -95,7 +95,7 @@ func main() {
 		{
 			Lang:            language.English,
 			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplayCode,
+			CurrencyDisplay: humanizemoney.DisplayNone,
 			Amount:          "1000",
 			Currency:        "BTC",
 			Decimals:        2,
@@ -103,7 +103,7 @@ func main() {
 		{
 			Lang:            language.English,
 			NoGrouping:      false,
-			CurrencyDisplay: humanizemoney.DisplayCode,
+			CurrencyDisplay: humanizemoney.DisplaySymbol, // Do not use DisplaySymbol | DisplayCode, since we are using custom currency, you can only use DisplayNone.
 			Amount:          "-1000",
 			Currency:        "₿",
 			Decimals:        0,
