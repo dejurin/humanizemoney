@@ -7,4 +7,4 @@ require (
 	golang.org/x/text v0.21.0
 )
 
-require github.com/govalues/decimal v0.1.29 // indirect
+require github.com/govalues/decimal v0.1.33 // indirect

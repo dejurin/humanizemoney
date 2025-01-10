@@ -1,5 +1,5 @@
-github.com/govalues/decimal v0.1.29 h1:GKC5g9y9oWxKIy51czdHTShOABwHm/shVuOVPwG415M=
-github.com/govalues/decimal v0.1.29/go.mod h1:LUlHHucpCmA4rJfNrDvMgrWibDpYnDNWqJuNU1/gxW8=
+github.com/govalues/decimal v0.1.33 h1:OoLFgtSrAK+Xttmv5ULVobriuoSKC/gyQjAqBjQqJE4=
+github.com/govalues/decimal v0.1.33/go.mod h1:Ee7eI3Llf7hfqDZtpj8Q6NCIgJy1iY3kH1pSwDrNqlM=
 github.com/govalues/money v0.2.3 h1:mj4pu+kSOREWdf+ilRB7ShY9qsv7N4hAgA4GgV2KmBQ=
 github.com/govalues/money v0.2.3/go.mod h1:BMZg8OrA8gjhvVjlt9UyittzFDv5WlN/wZZlMChezQg=
 golang.org/x/text v0.21.0 h1:zyQAAkrwaneQ066sspRyJaG9VNi/YJ1NfzcGB3hZ/qo=
