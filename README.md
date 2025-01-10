@@ -8,7 +8,7 @@ A Go package for formatting monetary amounts with proper localization support. I
 - Support for different currency symbols and positions
 - Proper decimal and grouping separators based on locale
 - Configurable decimal precision
-- Based on official Unicode CLDR data
+- Based on official [Unicode CLDR](https://github.com/unicode-org/cldr-json/) data
 
 ## Note
 
