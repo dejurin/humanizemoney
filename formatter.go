@@ -60,7 +60,13 @@ func New(locale language.Tag) *Humanizer {
 }
 
 func (h *Humanizer) Formatter(value string, currencyCode string, precision int) (string, error) {
-	amount, err := money.ParseAmount(currencyCode, value)
+	_, err := money.ParseCurr(currencyCode)
+	var passCurrencyCode = currencyCode
+	if err != nil {
+		passCurrencyCode = "XXX"
+	}
+	amount, err := money.ParseAmount(passCurrencyCode, value)
+
 	if err != nil {
 		return "", FailedParseAmount{Value: value, Err: err}
 	}
