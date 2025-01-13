@@ -11,12 +11,13 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/govalues/decimal"
 	"github.com/govalues/money"
 	"golang.org/x/text/language"
 )
 
 // FailedParseAmount represents an error that occurs when parsing a monetary amount fails.
-type FailedParseAmount struct {
+type FailedParseMoney struct {
 	// The original value that failed to parse
 	Value string
 	// The underlying error
@@ -24,7 +25,7 @@ type FailedParseAmount struct {
 }
 
 // Error returns a string representation of the error.
-func (e FailedParseAmount) Error() string {
+func (e FailedParseMoney) Error() string {
 	return fmt.Sprintf("failed to parse amount %q: %v", e.Value, e.Err)
 }
 
@@ -101,16 +102,37 @@ func (h *Humanizer) Formatter(value string, currencyCode string, precision int) 
 	amount, err := money.ParseAmount(passCurrencyCode, value)
 
 	if err != nil {
-		return "", FailedParseAmount{Value: value, Err: err}
+		return "", FailedParseMoney{Value: value, Err: err}
 	}
 
-	return h.FormatAmount(amount, currencyCode, precision)
+	return h.FormatMoney(amount, currencyCode, precision)
 }
 
-// FormatAmount formats a money.Amount value according to locale rules.
+// FormatDecimal formats a decimal.Decimal value according to locale rules.
+// It takes a Decimal object, currency code, and precision for decimal places.
+// Returns the formatted string and any error that occurred.
+func (h *Humanizer) FormatDecimal(decimal decimal.Decimal, currencyCode string, precision int) (string, error) {
+	curr, err := money.ParseCurr(currencyCode)
+	if err != nil {
+		xxx, err := money.ParseCurr("XXX")
+		curr = xxx
+		if err != nil {
+			return "", FailedParseMoney{Value: decimal.String(), Err: err}
+		}
+	}
+	amount, err := money.NewAmountFromDecimal(curr, decimal)
+
+	if err != nil {
+		return "", FailedParseMoney{Value: decimal.String(), Err: err}
+	}
+
+	return h.FormatMoney(amount, currencyCode, precision)
+}
+
+// FormatMoney formats a money.Amount value according to locale rules.
 // It takes an Amount object, currency code, and precision for decimal places.
 // Returns the formatted string and any error that occurred.
-func (h *Humanizer) FormatAmount(amount money.Amount, currencyCode string, precision int) (string, error) {
+func (h *Humanizer) FormatMoney(amount money.Amount, currencyCode string, precision int) (string, error) {
 	if precision < 0 {
 		amount = amount.RoundToCurr()
 	} else {
