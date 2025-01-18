@@ -106,6 +106,22 @@ func TestInterfaceFormatMoney(t *testing.T) {
 		}
 	})
 
+	t.Run("basic amount SAR", func(t *testing.T) {
+		amt, err := money.ParseAmount("SAR", "100.5")
+		if err != nil {
+			t.Fatalf("failed to create test amount: %v", err)
+		}
+
+		got, err := h.FormatMoney(amt, "SAR", 2)
+		if err != nil {
+			t.Fatalf("unexpected error: %v", err)
+		}
+		want := "100.50"
+		if got != want {
+			t.Errorf("FormatMoney got = %q, want %q", got, want)
+		}
+	})
+
 	t.Run("precision < 0 => RoundToCurr()", func(t *testing.T) {
 		amt, _ := money.ParseAmount("USD", "123.4567")
 		got, err := h.FormatMoney(amt, "USD", -1)
@@ -113,6 +129,29 @@ func TestInterfaceFormatMoney(t *testing.T) {
 			t.Fatalf("unexpected error: %v", err)
 		}
 		want := "$123.46"
+		if got != want {
+			t.Errorf("FormatMoney got = %q, want %q", got, want)
+		}
+	})
+}
+
+func TestInterfaceFormatMoneyException(t *testing.T) {
+	h := &Humanizer{
+		Locale:          language.English,
+		CurrencyDisplay: DisplaySymbolCode,
+	}
+
+	t.Run("basic amount SAR", func(t *testing.T) {
+		amt, err := money.ParseAmount("SAR", "100.5")
+		if err != nil {
+			t.Fatalf("failed to create test amount: %v", err)
+		}
+
+		got, err := h.FormatMoney(amt, "SAR", 2)
+		if err != nil {
+			t.Fatalf("unexpected error: %v", err)
+		}
+		want := "SAR100.50"
 		if got != want {
 			t.Errorf("FormatMoney got = %q, want %q", got, want)
 		}

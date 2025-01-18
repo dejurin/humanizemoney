@@ -47,6 +47,8 @@ type Display uint8
 const (
 	// DisplaySymbol shows the currency symbol (e.g., "$" for USD).
 	DisplaySymbol Display = iota
+	// DisplaySymbolCode shows the currency symbol (e.g., "$" for USD) or code if symbol is not available (e.g., "USD" for USD).
+	DisplaySymbolCode
 	// DisplayCode shows the currency code (e.g., "USD").
 	DisplayCode
 	// DisplayNone shows no currency indicator.
@@ -184,6 +186,12 @@ func (h *Humanizer) assembleSymbol(number string, np NumberPattern, currencyCode
 	var currencyPart string
 	switch h.CurrencyDisplay {
 	case DisplaySymbol:
+		symbolVal, ok := SymbolMap[currencyCode]
+		if !ok {
+			symbolVal = ""
+		}
+		currencyPart = symbolVal
+	case DisplaySymbolCode:
 		symbolVal, ok := SymbolMap[currencyCode]
 		if !ok {
 			symbolVal = currencyCode
