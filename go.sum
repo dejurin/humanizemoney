@@ -1,6 +1,6 @@
-github.com/govalues/decimal v0.1.33 h1:OoLFgtSrAK+Xttmv5ULVobriuoSKC/gyQjAqBjQqJE4=
-github.com/govalues/decimal v0.1.33/go.mod h1:Ee7eI3Llf7hfqDZtpj8Q6NCIgJy1iY3kH1pSwDrNqlM=
-github.com/govalues/money v0.2.3 h1:mj4pu+kSOREWdf+ilRB7ShY9qsv7N4hAgA4GgV2KmBQ=
-github.com/govalues/money v0.2.3/go.mod h1:BMZg8OrA8gjhvVjlt9UyittzFDv5WlN/wZZlMChezQg=
+github.com/govalues/decimal v0.1.36 h1:dojDpsSvrk0ndAx8+saW5h9WDIHdWpIwrH/yhl9olyU=
+github.com/govalues/decimal v0.1.36/go.mod h1:Ee7eI3Llf7hfqDZtpj8Q6NCIgJy1iY3kH1pSwDrNqlM=
+github.com/govalues/money v0.2.4 h1:UpHB7s77OmOid6DBf8FWJoojTu2e+oTw2JA4G+VRVxs=
+github.com/govalues/money v0.2.4/go.mod h1:8UEv+C0wA4cjF6mEkgoNsVo46O/r1EecRnvIq4OyAL0=
 golang.org/x/text v0.21.0 h1:zyQAAkrwaneQ066sspRyJaG9VNi/YJ1NfzcGB3hZ/qo=
 golang.org/x/text v0.21.0/go.mod h1:4IBbMaMmOPCJ8SecivzSH54+73PCFmPWxNTLm+vZkEQ=
